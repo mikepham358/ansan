@@ -14,6 +14,9 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/full-logo.png">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,24 +24,35 @@
             theme: {
                 extend: {
                     colors: {
+                        google: {
+                            blue: '#4285F4',
+                            red: '#EA4335',
+                            yellow: '#FBBC05',
+                            green: '#34A853'
+                        },
+                        lego: {
+                            red: '#E52521',
+                            yellow: '#FFD700',
+                            blue: '#006CB7',
+                            green: '#00853F',
+                            orange: '#F57D20'
+                        },
                         ansan: {
                             navy: '#0B192C',
-                            dark: '#070F2B',
                             primary: '#1E3E62',
-                            gold: '#D97706',
-                            goldLight: '#F59E0B',
-                            wood: '#FDFBF7',
-                            woodCard: '#F7F3E9',
-                            woodBorder: '#E6DEC9',
-                            legoRed: '#E53E3E',
-                            legoBlue: '#3182CE',
-                            legoYellow: '#ECC94B',
-                            legoGreen: '#38A169'
+                            slate: '#0F172A',
+                            border: '#E2E8F0',
+                            lightBg: '#F8FAFC'
                         }
                     },
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
+                        sans: ['Outfit', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif']
+                    },
+                    boxShadow: {
+                        'lego': '0 4px 0 0 rgba(0,0,0,0.06)',
+                        'lego-hover': '0 6px 0 0 rgba(0,0,0,0.08)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.02)'
                     }
                 }
             }
@@ -48,535 +62,754 @@
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #FDFBF7; color: #1E293B; }
-        .font-serif-title { font-family: 'Playfair Display', serif; }
-        .hero-pattern {
-            background-color: #0B192C;
-            background-image: radial-gradient(rgba(217, 119, 6, 0.12) 1px, transparent 1px), radial-gradient(rgba(30, 62, 98, 0.2) 1px, #0B192C 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #FFFFFF; 
+            color: #1E293B; 
         }
-        .gold-shimmer {
-            background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #D97706 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .font-serif-title { 
+            font-family: 'Playfair Display', serif; 
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(230, 222, 201, 0.8);
+        
+        /* Subtle clean grid pattern for white background */
+        .white-grid-bg {
+            background-color: #FFFFFF;
+            background-image: radial-gradient(#E2E8F0 1.2px, transparent 1.2px);
+            background-size: 28px 28px;
         }
-        .wood-card {
-            background-color: #FAF7F0;
-            border: 1px solid #E6DEC9;
+
+        /* 4-Color Google + LEGO Brand Stripe */
+        .brand-quad-bar {
+            background: linear-gradient(90deg, 
+                #4285F4 0%, #4285F4 25%, 
+                #EA4335 25%, #EA4335 50%, 
+                #FBBC05 50%, #FBBC05 75%, 
+                #34A853 75%, #34A853 100%);
+            height: 4px;
+        }
+
+        /* LEGO-inspired top border accents */
+        .lego-top-blue { border-top: 4px solid #4285F4; }
+        .lego-top-red { border-top: 4px solid #EA4335; }
+        .lego-top-yellow { border-top: 4px solid #FBBC05; }
+        .lego-top-green { border-top: 4px solid #34A853; }
+
+        /* Custom smooth badge hover */
+        .brick-tag {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .brick-tag:hover {
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-white">
+<body class="bg-white text-slate-800 antialiased selection:bg-google-blue selection:text-white">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-ansan-navy via-ansan-primary to-ansan-navy text-white text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-amber-500/20">
-        <span class="inline-flex items-center gap-2">
-            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>🏛️ <strong>Thư viện Mở ANSAN</strong> ra mắt mô hình chuẩn Oodi Phần Lan trên tên miền chính thức <strong>ansan.pro</strong></span>
-            <a href="#open-source" class="underline ml-2 text-amber-300 hover:text-white font-semibold">Tải Bạch Thư & Mã Nguồn MIT &rarr;</a>
-        </span>
+    <!-- Top Quad-Color Brand Bar -->
+    <div class="brand-quad-bar w-full sticky top-0 z-50"></div>
+
+    <!-- Announcement Bar on Crisp White -->
+    <div class="bg-slate-50 border-b border-slate-200 text-slate-700 text-xs md:text-sm py-2 px-4 text-center font-medium">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="flex h-2 w-2 rounded-full bg-google-green animate-ping"></span>
+            <span>🏛️ <strong>Thư viện Mở ANSAN</strong> ra mắt mô hình chuẩn Oodi Helsinki trên tên miền chính thức <strong>ansan.pro</strong></span>
+            <a href="#open-source" class="inline-flex items-center gap-1 font-bold text-google-blue hover:text-blue-700 underline ml-2">
+                Tài Nguyên Mở & Mã Nguồn MIT &rarr;
+            </a>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
+    <!-- Navigation Header -->
+    <header class="sticky top-1 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="assets/logo.png" alt="ANSAN Logo" class="h-12 w-12 object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <img src="assets/logo.png" alt="ANSAN Logo" class="h-11 w-11 object-contain rounded-xl shadow-sm border border-slate-100 group-hover:scale-105 transition-transform">
                 <div>
-                    <div class="font-bold text-xl tracking-tight text-ansan-navy">
-                        THƯ VIỆN MỞ <span class="text-amber-600">ANSAN</span>
+                    <div class="font-black text-xl tracking-tight text-slate-900 flex items-center gap-1">
+                        <span>THƯ VIỆN MỞ</span>
+                        <span class="text-google-blue">A</span><span class="text-google-red">N</span><span class="text-google-yellow">S</span><span class="text-google-green">A</span><span class="text-google-blue">N</span>
                     </div>
-                    <div class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">
-                        Bảo An AI • Sáng Tạo Hân Hoan
+                    <div class="text-[10px] tracking-wider uppercase font-bold text-slate-500 flex items-center gap-1.5">
+                        <span>Bảo An AI</span>
+                        <span class="text-slate-300">•</span>
+                        <span>Sáng Tạo Hân Hoan</span>
                     </div>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
-                <a href="#triet-ly" class="hover:text-amber-600 transition-colors">Chu Trình ĐƯỢC</a>
-                <a href="#oodi-model" class="hover:text-amber-600 transition-colors">Không Gian 3 Tầng</a>
-                <a href="#dong-tien" class="hover:text-amber-600 transition-colors">4 Động Cơ Dòng Tiền</a>
-                <a href="#doi-tac" class="hover:text-amber-600 transition-colors">LEGO & Google</a>
-                <a href="#open-source" class="hover:text-amber-600 transition-colors">Tài Nguyên Mở</a>
-                <a href="#an-toan-so" class="hover:text-amber-600 transition-colors">An Toàn Số</a>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+                <a href="#triet-ly" class="hover:text-google-blue transition-colors">Chu Trình ĐƯỢC</a>
+                <a href="#oodi-model" class="hover:text-google-red transition-colors">Không Gian 3 Tầng</a>
+                <a href="#interactive-demo" class="hover:text-google-yellow transition-colors">Demo Socratic AI</a>
+                <a href="#dong-tien" class="hover:text-google-green transition-colors">4 Động Cơ Tài Chính</a>
+                <a href="#doi-tac" class="hover:text-google-blue transition-colors">LEGO & Google</a>
+                <a href="#open-source" class="hover:text-google-red transition-colors">Kho Tài Nguyên</a>
             </nav>
 
+            <!-- Action Buttons -->
             <div class="hidden sm:flex items-center gap-3">
                 <a href="https://github.com/mikepham358/ansan" target="_blank" rel="noopener noreferrer" 
-                   class="px-4 py-2 rounded-xl text-stone-700 hover:text-ansan-navy hover:bg-stone-100 text-sm font-semibold flex items-center gap-2 transition border border-stone-200">
-                    <i class="fa-brands fa-github text-lg"></i>
+                   class="px-3.5 py-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 text-sm font-semibold flex items-center gap-2 transition border border-slate-200">
+                    <i class="fa-brands fa-github text-base"></i>
                     <span>GitHub</span>
                 </a>
                 <a href="#lien-he" 
-                   class="px-5 py-2.5 rounded-xl bg-ansan-primary hover:bg-ansan-navy text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                   class="px-5 py-2.5 rounded-xl bg-google-blue hover:bg-blue-600 text-white text-sm font-bold shadow-md hover:shadow-blue-200 transition-all flex items-center gap-2">
                     <i class="fa-solid fa-handshake"></i>
                     <span>Hợp Tác Đối Tác</span>
                 </a>
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" class="lg:hidden p-2 text-stone-600 hover:text-ansan-navy focus:outline-none" aria-label="Toggle menu">
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100" aria-label="Toggle menu">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-b border-stone-200 bg-white px-4 pt-2 pb-6 space-y-3">
-            <a href="#triet-ly" class="block py-2 text-stone-700 font-medium">Chu Trình ĐƯỢC</a>
-            <a href="#oodi-model" class="block py-2 text-stone-700 font-medium">Không Gian 3 Tầng</a>
-            <a href="#dong-tien" class="block py-2 text-stone-700 font-medium">4 Động Cơ Dòng Tiền</a>
-            <a href="#doi-tac" class="block py-2 text-stone-700 font-medium">LEGO & Google</a>
-            <a href="#open-source" class="block py-2 text-stone-700 font-medium">Tài Nguyên Mở</a>
-            <a href="#an-toan-so" class="block py-2 text-stone-700 font-medium">An Toàn Số</a>
-            <div class="pt-4 flex flex-col gap-2">
-                <a href="https://github.com/mikepham358/ansan" target="_blank" class="w-full text-center py-2.5 rounded-xl border border-stone-300 font-semibold">GitHub Repo</a>
-                <a href="#lien-he" class="w-full text-center py-2.5 rounded-xl bg-ansan-primary text-white font-semibold">Hợp Tác Đối Tác</a>
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+            <a href="#triet-ly" class="block py-2 text-slate-700 font-semibold hover:text-google-blue">Chu Trình ĐƯỢC</a>
+            <a href="#oodi-model" class="block py-2 text-slate-700 font-semibold hover:text-google-red">Không Gian 3 Tầng Chuẩn Oodi</a>
+            <a href="#interactive-demo" class="block py-2 text-slate-700 font-semibold hover:text-google-yellow">Trải Nghiệm Gia Sư Socratic</a>
+            <a href="#dong-tien" class="block py-2 text-slate-700 font-semibold hover:text-google-green">4 Động Cơ Dòng Tiền</a>
+            <a href="#doi-tac" class="block py-2 text-slate-700 font-semibold hover:text-google-blue">Hợp Tác LEGO & Google</a>
+            <a href="#open-source" class="block py-2 text-slate-700 font-semibold hover:text-google-red">Kho Tài Nguyên MIT</a>
+            <a href="#an-toan-so" class="block py-2 text-slate-700 font-semibold hover:text-google-green">An Toàn Số Trẻ Em</a>
+            <div class="pt-3 flex flex-col gap-2">
+                <a href="https://github.com/mikepham358/ansan" target="_blank" class="w-full text-center py-2.5 rounded-xl border border-slate-300 font-bold text-slate-800">
+                    <i class="fa-brands fa-github mr-1.5"></i> GitHub Repository
+                </a>
+                <a href="#lien-he" class="w-full text-center py-2.5 rounded-xl bg-google-blue text-white font-bold shadow">
+                    Đăng Ký Đối Tác
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-pattern py-20 lg:py-28 text-white relative overflow-hidden">
+    <!-- HERO SECTION (Pure White Background with LEGO & Google Brand Accents) -->
+    <section class="white-grid-bg py-16 sm:py-24 border-b border-slate-100 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
-                <!-- Badges -->
-                <div class="flex flex-wrap justify-center items-center gap-2.5 mb-8">
-                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 border border-amber-400/30 text-amber-300">
-                        <i class="fa-solid fa-landmark"></i> Mô hình Oodi Helsinki (Phần Lan)
+                
+                <!-- Partner & Model Badges in 4 Colors -->
+                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-8">
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 border border-blue-200 text-google-blue shadow-sm">
+                        <i class="fa-solid fa-landmark"></i> Chuẩn Oodi Helsinki (Phần Lan)
                     </span>
-                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 border border-blue-400/30 text-blue-300">
-                        <i class="fa-brands fa-google"></i> Google for Education
-                    </span>
-                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-red-500/10 border border-red-400/30 text-red-300">
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-red-50 border border-red-200 text-lego-red shadow-sm">
                         <i class="fa-solid fa-shapes"></i> LEGO Education STEAM
                     </span>
-                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-400/30 text-emerald-300">
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-50 border border-amber-200 text-amber-800 shadow-sm">
+                        <i class="fa-brands fa-google text-google-yellow"></i> Google for Education
+                    </span>
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-50 border border-emerald-200 text-google-green shadow-sm">
                         <i class="fa-solid fa-shield-halved"></i> Zero-PII Walled-Garden
                     </span>
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-serif-title leading-tight">
-                    THƯ VIỆN MỞ <span class="gold-shimmer">ANSAN</span>
+                <!-- Main Hero Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 font-serif-title leading-tight">
+                    THƯ VIỆN MỞ <span class="text-google-blue">A</span><span class="text-google-red">N</span><span class="text-google-yellow">S</span><span class="text-google-green">A</span><span class="text-google-blue">N</span>
                 </h1>
                 
-                <p class="text-xl sm:text-2xl lg:text-3xl font-medium text-amber-200/90 mb-8 font-serif-title italic">
-                    "Bảo an AI – Sáng tạo Hân hoan" (Safe AI, Joyful Creation)
+                <!-- Philosophy Catchphrase -->
+                <p class="text-2xl sm:text-3xl font-bold mb-6 font-serif-title">
+                    <span class="text-google-blue">Bảo an AI</span> 
+                    <span class="text-slate-400 font-light mx-1.5">—</span> 
+                    <span class="text-lego-red">Sáng tạo Hân hoan</span>
                 </p>
 
-                <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                    Không gian công cộng thế hệ mới hòa quyện triết lý <strong>"Học qua Chơi" (Learning Through Play)</strong> của LEGO, tầm nhìn <strong>"Lớp học Tương lai"</strong> của Google for Education, và khung sư phạm bản địa <strong>Chu trình ĐƯỢC</strong>. Nơi người học được bảo an toàn diện để tự do sáng tạo rực rỡ.
+                <!-- Core Value Proposition -->
+                <p class="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+                    Không gian Living Lab thế hệ mới hòa quyện triết lý <strong>"Học qua Chơi" (Learning Through Play)</strong> của LEGO, tầm nhìn <strong>"Lớp học Tương lai"</strong> của Google for Education, và khung sư phạm bản địa <strong>Chu trình ĐƯỢC</strong>. Nơi trẻ em được an toàn toàn diện để tự do sáng tạo rực rỡ.
                 </p>
 
                 <!-- CTA Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
                     <a href="#oodi-model" 
-                       class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-ansan-navy font-bold text-base shadow-lg hover:shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+                       class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-google-blue hover:bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-compass"></i>
                         <span>Khám Phá Mô Hình 3 Tầng</span>
                     </a>
                     <a href="#open-source" 
-                       class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-base transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
-                        <i class="fa-solid fa-file-arrow-down"></i>
+                       class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border-2 border-slate-200 text-slate-800 font-bold text-base shadow-sm hover:border-slate-300 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-arrow-down text-google-red"></i>
                         <span>Tải Hồ Sơ Dự Án (DOCX / MD)</span>
                     </a>
                     <a href="https://github.com/mikepham358/ansan" target="_blank" 
-                       class="w-full sm:w-auto px-6 py-4 rounded-xl bg-stone-900/80 hover:bg-black border border-stone-700 text-stone-200 font-semibold text-base transition-all flex items-center justify-center gap-2">
+                       class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-slate-900 hover:bg-black text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
                         <i class="fa-brands fa-github text-xl"></i>
                         <span>GitHub Repository</span>
                     </a>
                 </div>
 
-                <!-- Live Metrics -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-white/10 text-left">
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <div class="text-2xl lg:text-3xl font-extrabold text-amber-400">1.200+</div>
-                        <div class="text-xs text-stone-400 mt-1">Học sinh thụ hưởng trực tiếp</div>
+                <!-- 4 Highlight Impact Metrics Cards with LEGO/Google 4-Colors -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                    <!-- Blue Metric -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-blue">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-google-blue">1.200+</span>
+                            <span class="w-8 h-8 rounded-full bg-blue-50 text-google-blue flex items-center justify-center text-xs"><i class="fa-solid fa-children"></i></span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Học sinh thụ hưởng</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Trải nghiệm Living Lab mở</div>
                     </div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <div class="text-2xl lg:text-3xl font-extrabold text-blue-400">300+</div>
-                        <div class="text-xs text-stone-400 mt-1">Thầy cô & Quản lý đào tạo</div>
+
+                    <!-- Red Metric -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-red">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-google-red">300+</span>
+                            <span class="w-8 h-8 rounded-full bg-red-50 text-google-red flex items-center justify-center text-xs"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Thầy cô & Nhà giáo</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Đào tạo năng lực AI an toàn</div>
                     </div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <div class="text-2xl lg:text-3xl font-extrabold text-emerald-400">50+</div>
-                        <div class="text-xs text-stone-400 mt-1">Nguyên mẫu AI & LEGO STEAM</div>
+
+                    <!-- Yellow Metric -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-yellow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-amber-500">50+</span>
+                            <span class="w-8 h-8 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xs"><i class="fa-solid fa-cubes"></i></span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Nguyên mẫu STEAM</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Robot LEGO & Gemini Apps</div>
                     </div>
-                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <div class="text-2xl lg:text-3xl font-extrabold text-purple-400">CSAT ≥ 4.5</div>
-                        <div class="text-xs text-stone-400 mt-1">Chỉ số Tự chủ & Hân hoan</div>
+
+                    <!-- Green Metric -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-green">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-google-green">100%</span>
+                            <span class="w-8 h-8 rounded-full bg-emerald-50 text-google-green flex items-center justify-center text-xs"><i class="fa-solid fa-shield-check"></i></span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700">Zero-PII Walled-Garden</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Tuyệt đối bảo vệ trẻ em số</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Section 1: Triết Lý Chu Trình ĐƯỢC -->
-    <section id="triet-ly" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- SECTION 1: TRIẾT LÝ SƯ PHẠM BẢN ĐỊA "CHU TRÌNH ĐƯỢC" -->
+    <section id="triet-ly" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Trọng Tâm Sư Phạm Bản Địa</span>
-            <h2 class="text-3xl sm:text-5xl font-bold font-serif-title text-ansan-navy mt-2 mb-4">
-                Khung Ngữ Pháp Sư Phạm "Chu Trình ĐƯỢC"
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-google-blue border border-blue-200 uppercase tracking-wider mb-3">
+                Khung Ngữ Pháp Sư Phạm Độc Bản
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                Chu Trình ĐƯỢC & 3 Nhịp Chuyển Hóa
             </h2>
-            <p class="text-stone-600 text-base sm:text-lg">
-                Giải quyết triệt để vấn nạn học sinh ỷ lại vào AI đưa đáp án sẵn bằng 3 nhịp chuyển hóa nhận thức độc bản.
+            <p class="text-slate-600 text-base sm:text-lg">
+                Giải quyết triệt để vấn nạn học sinh ỷ lại vào AI đưa đáp án ăn sẵn thông qua 3 nhịp kiến tạo năng lực độc bản.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <!-- Step 1 -->
-            <div class="wood-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow relative">
-                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-700 flex items-center justify-center text-xl font-bold mb-6">
-                    01
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Nhịp 1: ĐƯỢC + Động từ -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-card hover:shadow-xl transition-all duration-300 lego-top-blue flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="w-12 h-12 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center text-lg font-black border border-blue-200">
+                            01
+                        </span>
+                        <span class="px-3 py-1 bg-blue-50 text-google-blue text-xs font-bold rounded-full">NHỊP 1</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">ĐƯỢC + Động Từ</h3>
+                    <p class="text-xs font-bold text-google-blue uppercase tracking-wider mb-4">Vùng An Toàn & Trao Quyền (Learner Agency)</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Thiết lập môi trường số khép kín an toàn (<strong>Walled-Garden</strong> trên Gemini NotebookLM/LearnLM) với cam kết tuyệt đối <strong>Zero-PII</strong> (không thu thập dữ liệu định danh cá nhân). Trẻ em được quyền thử sai mà không lo phán xét.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-ansan-navy mb-3">ĐƯỢC + Động Từ</h3>
-                <p class="text-sm font-semibold text-amber-700 uppercase tracking-wider mb-4">Vùng An Toàn & Trao Quyền (Learner Agency)</p>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    Thiết lập môi trường số khép kín an toàn (<strong>Walled-Garden</strong> trên Gemini NotebookLM/LearnLM) với cam kết tuyệt đối <strong>Zero-PII</strong> (không thu thập dữ liệu định danh cá nhân).
-                </p>
-                <ul class="text-xs text-stone-500 space-y-2 border-t border-stone-200 pt-4">
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Học sinh được an toàn, không sợ phán xét.</li>
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Trao quyền tự do thử sai (Learning Through Play).</li>
-                </ul>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-google-blue mt-0.5"></i>
+                        <span>Được an toàn, được lắng nghe và tôn trọng.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-google-blue mt-0.5"></i>
+                        <span>Trao quyền tự chủ theo triết lý LEGO Learning Through Play.</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Step 2 -->
-            <div class="wood-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow relative border-2 border-amber-500/40">
-                <div class="w-12 h-12 rounded-2xl bg-ansan-primary/10 border border-ansan-primary/20 text-ansan-primary flex items-center justify-center text-xl font-bold mb-6">
-                    02
+            <!-- Nhịp 2: Loay Hoay Hữu Ích -->
+            <div class="bg-white p-8 rounded-3xl border-2 border-google-yellow shadow-card hover:shadow-xl transition-all duration-300 lego-top-yellow flex flex-col justify-between relative">
+                <div class="absolute -top-3 right-6 bg-google-yellow text-slate-900 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+                    Trọng Tâm Sư Phạm
                 </div>
-                <h3 class="text-xl font-bold text-ansan-navy mb-3">Loay Hoay Hữu Ích</h3>
-                <p class="text-sm font-semibold text-ansan-primary uppercase tracking-wider mb-4">Productive Struggle & Socratic PARTS</p>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    Tuyệt đối <strong>không để AI giải bài hộ</strong> hay đưa đáp án ăn sẵn. AI đóng vai gia sư Socratic chỉ đặt câu hỏi gợi mở, trích dẫn 100% nguồn sách giáo khoa/tài liệu chuẩn xác (<strong>Grounding</strong>).
-                </p>
-                <ul class="text-xs text-stone-500 space-y-2 border-t border-stone-200 pt-4">
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Học sinh tự vật lộn suy nghĩ tìm lời giải.</li>
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Rèn luyện kỹ năng săn ảo giác (Hallucination Hunting).</li>
-                </ul>
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg font-black border border-amber-200">
+                            02
+                        </span>
+                        <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full">NHỊP 2</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Loay Hoay Hữu Ích</h3>
+                    <p class="text-xs font-bold text-amber-700 uppercase tracking-wider mb-4">Productive Struggle & Socratic AI</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Tuyệt đối <strong>không để AI giải bài hộ</strong> hay đưa đáp án làm sẵn. Trợ lý AI đóng vai gia sư Socratic chỉ gợi mở từng bước, buộc người học đào sâu tư duy phản biện và rèn luyện kỹ năng <strong>săn ảo giác (Hallucination Hunting)</strong>.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-amber-600 mt-0.5"></i>
+                        <span>Học sinh trực tiếp tư duy và đối thoại phản biện.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-amber-600 mt-0.5"></i>
+                        <span>Cơ chế kiểm chứng nguồn sách gốc (Grounding 100%).</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Step 3 -->
-            <div class="wood-card p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow relative">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 flex items-center justify-center text-xl font-bold mb-6">
-                    03
+            <!-- Nhịp 3: Động từ + ĐƯỢC -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-card hover:shadow-xl transition-all duration-300 lego-top-green flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="w-12 h-12 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center text-lg font-black border border-emerald-200">
+                            03
+                        </span>
+                        <span class="px-3 py-1 bg-emerald-50 text-google-green text-xs font-bold rounded-full">NHỊP 3</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Động Từ + ĐƯỢC</h3>
+                    <p class="text-xs font-bold text-google-green uppercase tracking-wider mb-4">Bản Lĩnh Tự Chủ & Sáng Tạo Hân Hoan</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Người học chuyển hóa sự trợ giúp ban đầu thành năng lực nội tại: tự tay lắp ghép <strong>được</strong> mô hình robot LEGO STEAM, lập trình <strong>được</strong> ứng dụng tương tác thông qua <strong>Vibe Coding</strong> trên Gemini Canvas.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-ansan-navy mb-3">Động Từ + ĐƯỢC</h3>
-                <p class="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-4">Kết Tinh Năng Lực & Sáng Tạo Hân Hoan</p>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    Người học chuyển hóa sự hỗ trợ ban đầu thành bản lĩnh tự chủ thực sự: tự tay lắp ghép <strong>được</strong> mô hình robot LEGO STEAM, lập trình <strong>được</strong> ứng dụng AI thông qua <strong>Vibe Coding</strong> trên Gemini Canvas.
-                </p>
-                <ul class="text-xs text-stone-500 space-y-2 border-t border-stone-200 pt-4">
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Đạt niềm tự hào "Chính em đã làm được!".</li>
-                    <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Tự chủ vận hành 7 ban chuyên trách học sinh.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 2: Kiến Trúc Không Gian 3 Tầng Chuẩn Oodi Helsinki -->
-    <section id="oodi-model" class="py-24 bg-stone-100/70 border-y border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Kiến Trúc Living Lab</span>
-                <h2 class="text-3xl sm:text-5xl font-bold font-serif-title text-ansan-navy mt-2 mb-4">
-                    Kiến Trúc 3 Tầng Chuẩn Oodi (Helsinki, Phần Lan)
-                </h2>
-                <p class="text-stone-600 text-base sm:text-lg">
-                    Tái hiện không gian công cộng biểu tượng của Phần Lan – không chỉ chứa sách, mà là "Phòng Khách Quốc Gia & Xưởng Chế Tác Đổi Mới".
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Tầng 1 -->
-                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">TẦNG 1</span>
-                            <span class="text-stone-400 text-xs"><i class="fa-solid fa-users mr-1"></i> 80–120 Người</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-ansan-navy mb-2">Đấu Trường Sáng Chế Mở</h3>
-                        <p class="text-amber-700 font-medium text-xs uppercase tracking-wider mb-4">AI & STEM Hackathon Arena</p>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Sàn mở linh hoạt trang bị bàn Maker đa năng. Nơi học sinh, phụ huynh và giáo viên đồng sáng chế các nguyên mẫu AI an toàn kết hợp mô hình robot LEGO Education (SPIKE Prime/Essential).
-                        </p>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-google-green mt-0.5"></i>
+                        <span>Tự hào reo vang: "Chính em đã làm ĐƯỢC!".</span>
                     </div>
-                    <div class="border-t border-stone-100 pt-4 text-xs text-stone-500 space-y-1.5">
-                        <div><i class="fa-solid fa-bolt text-amber-500 mr-1.5"></i> Đăng cai ngày hội AI & STEM Hackathon 20 đội.</div>
-                        <div><i class="fa-solid fa-shield-halved text-blue-500 mr-1.5"></i> 6 quy trình dự phòng rủi ro BP-01 đến BP-06.</div>
-                    </div>
-                </div>
-
-                <!-- Tầng 2 -->
-                <div class="bg-white rounded-3xl p-8 border-2 border-ansan-primary shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="px-3 py-1 bg-ansan-primary text-white text-xs font-bold rounded-full">TẦNG 2</span>
-                            <span class="text-stone-400 text-xs"><i class="fa-solid fa-laptop-code mr-1"></i> Google Lab</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-ansan-navy mb-2">Studio Lớp Học Tương Lai</h3>
-                        <p class="text-ansan-primary font-medium text-xs uppercase tracking-wider mb-4">Future of the Classroom Studio</p>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Phòng thí nghiệm chuẩn Google Reference School với trạm Chromebook và màn hình tương tác. Triển khai chuỗi 4 workshop theo 8 xu hướng <em>Google Future of the Classroom</em>, thực hành <strong>Vibe Coding trên Gemini Canvas</strong>.
-                        </p>
-                    </div>
-                    <div class="border-t border-stone-100 pt-4 text-xs text-stone-500 space-y-1.5">
-                        <div><i class="fa-solid fa-chalkboard-user text-ansan-primary mr-1.5"></i> Mô hình "Học sinh dạy Học sinh & Thầy cô".</div>
-                        <div><i class="fa-solid fa-code text-emerald-500 mr-1.5"></i> Lập trình điều khiển LEGO bằng ngôn ngữ tự nhiên.</div>
-                    </div>
-                </div>
-
-                <!-- Tầng 3 -->
-                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="px-3 py-1 bg-stone-100 text-stone-800 text-xs font-bold rounded-full">TẦNG 3</span>
-                            <span class="text-stone-400 text-xs"><i class="fa-solid fa-leaf mr-1"></i> Bắc Âu</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-ansan-navy mb-2">Vòm Tĩnh Lặng Bảo An</h3>
-                        <p class="text-emerald-700 font-medium text-xs uppercase tracking-wider mb-4">The Sanctuary Oasis</p>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
-                            Không gian gỗ tự nhiên sáng màu, thảm âm học, ngập tràn ánh sáng trời và cây xanh. Nơi đọc sách sâu, tra cứu an toàn cùng <strong>Gemini NotebookLM</strong>, rèn luyện kỹ năng tự vấn Socratic và phục hồi sức chú ý.
-                        </p>
-                    </div>
-                    <div class="border-t border-stone-100 pt-4 text-xs text-stone-500 space-y-1.5">
-                        <div><i class="fa-solid fa-book-open-reader text-emerald-600 mr-1.5"></i> Phục hồi năng lượng tinh thần (Digital Well-being).</div>
-                        <div><i class="fa-solid fa-certificate text-amber-500 mr-1.5"></i> Nghiên cứu thực nghiệm cho Luận án Tiến sĩ (PhD).</div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-google-green mt-0.5"></i>
+                        <span>Tự tin trình bày và chia sẻ giá trị tới cộng đồng.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: 4 Động Cơ Dòng Tiền & Phát Triển Bền Vững -->
-    <section id="dong-tien" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- INTERACTIVE SOCRATIC AI DEMO (Google + LEGO Vibe on Pure White) -->
+    <section id="interactive-demo" class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider">
+                    Trải Nghiệm Trực Quan
+                </span>
+                <h3 class="text-2xl sm:text-4xl font-extrabold font-serif-title text-slate-900 mt-2 mb-3">
+                    So Sánh: AI Thông Thường vs. Chu Trình ĐƯỢC
+                </h3>
+                <p class="text-slate-600 text-sm">
+                    Bấm chọn tình huống bên dưới để chứng kiến sự khác biệt giữa AI giải bài ăn sẵn và Gia sư Socratic ANSAN.
+                </p>
+            </div>
+
+            <!-- Demo Container -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+                <!-- Demo Header Tabs -->
+                <div class="grid grid-cols-2 border-b border-slate-200 bg-slate-100/70 p-1.5 gap-2">
+                    <button id="tab-bad" onclick="showDemo('bad')" class="py-3 px-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition bg-white text-slate-800 shadow-sm border border-slate-200">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                        <span>AI Thông Thường (Giải Hộ)</span>
+                    </button>
+                    <button id="tab-good" onclick="showDemo('good')" class="py-3 px-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-wand-magic-sparkles text-google-blue"></i>
+                        <span>Gia Sư Socratic ANSAN (Chu Trình ĐƯỢC)</span>
+                    </button>
+                </div>
+
+                <!-- Demo Content Body -->
+                <div class="p-6 sm:p-8">
+                    <!-- Scenario Bad -->
+                    <div id="demo-bad" class="space-y-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-sm">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Học sinh hỏi:</span>
+                            <p class="text-slate-800 font-medium">"Viết giúp em đoạn code Python để điều khiển cảm biến khoảng cách cho robot LEGO SPIKE dừng lại trước chướng ngại vật 10cm."</p>
+                        </div>
+                        <div class="p-4 bg-red-50/60 rounded-2xl border border-red-200 text-sm">
+                            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-red-700 mb-2">
+                                <i class="fa-solid fa-xmark"></i> AI Phản Hồi Làm Sẵn (Nguy Cơ Ỷ Lại)
+                            </div>
+                            <pre class="bg-white p-3 rounded-xl text-xs font-mono text-slate-800 border border-red-100 overflow-x-auto">
+# Đây là code hoàn chỉnh của bạn, hãy copy dán vào:
+from spike import DistanceSensor, MotorPair
+motor = MotorPair('A', 'B')
+sensor = DistanceSensor('F')
+while True:
+    if sensor.get_distance_cm() < 10:
+        motor.stop()
+        break</pre>
+                            <div class="mt-3 text-xs text-red-800 bg-red-100/60 p-2.5 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <span><strong>Hệ quả:</strong> Học sinh sao chép máy móc, không hiểu logic vòng lặp, mất đi cơ hội tư duy phản biện.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scenario Good -->
+                    <div id="demo-good" class="hidden space-y-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-sm">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Học sinh hỏi:</span>
+                            <p class="text-slate-800 font-medium">"Viết giúp em đoạn code Python để điều khiển cảm biến khoảng cách cho robot LEGO SPIKE dừng lại trước chướng ngại vật 10cm."</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200 text-sm">
+                            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-google-green mb-2">
+                                <i class="fa-solid fa-check"></i> Gia Sư Socratic ANSAN (Kích Hoạt Loay Hoay Hữu Ích)
+                            </div>
+                            <div class="space-y-3 text-slate-700 text-xs sm:text-sm">
+                                <p class="font-semibold text-slate-900">
+                                    "Tuyệt vời! Ý tưởng chế tạo xe tự hành tránh vật cản của em rất thú vị. Thầy gợi ý em suy nghĩ qua 2 bước sau nhé:"
+                                </p>
+                                <ol class="list-decimal pl-5 space-y-1.5 font-medium">
+                                    <li>Khi xe đang chạy tiến về phía trước, động cơ bánh xe đang ở trạng thái nào?</li>
+                                    <li>Nếu cảm biến đo được khoảng cách nhỏ hơn 10cm, điều kiện logic trong câu lệnh <code class="bg-emerald-100 px-1 py-0.5 rounded text-emerald-900">if</code> của em sẽ so sánh giá trị nào?</li>
+                                </ol>
+                                <p class="italic text-slate-600 bg-white p-3 rounded-xl border border-emerald-100">
+                                    "Em hãy thử viết nháp 3 dòng lệnh đầu tiên và gửi lại cho thầy, thầy sẽ cùng em rà soát từng dòng để xe vận hành an toàn!"
+                                </p>
+                            </div>
+                            <div class="mt-3 text-xs text-emerald-800 bg-emerald-100/70 p-2.5 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong>Kết quả:</strong> Học sinh tự tay lắp ghép, tự viết code, thấu hiểu thuật toán và tự hào nói: "Em tự làm ĐƯỢC!".</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: MÔ HÌNH 3 TẦNG CHUẨN OODI HELSINKI -->
+    <section id="oodi-model" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Kinh Tế Doanh Nghiệp Xã Hội Lai</span>
-            <h2 class="text-3xl sm:text-5xl font-bold font-serif-title text-ansan-navy mt-2 mb-4">
-                4 Động Cơ Tạo Dòng Tiền Bền Vững (Hybrid Cashflow)
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-lego-red border border-red-200 uppercase tracking-wider mb-3">
+                Kiến Trúc Living Lab Đổi Mới
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                Kiến Trúc 3 Tầng Chuẩn Oodi Helsinki
             </h2>
-            <p class="text-stone-600 text-base sm:text-lg">
-                Cửa mở phục vụ cộng đồng nhờ nguồn tài trợ, tự chủ tài chính nhờ 4 động cơ tạo doanh thu định kỳ.
+            <p class="text-slate-600 text-base sm:text-lg">
+                Tái hiện không gian công cộng biểu tượng Phần Lan – không chỉ là nơi chứa sách mà là "Phòng Khách Đổi Mới & Xưởng Chế Tác Cộng Đồng".
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Tầng 1: Đấu Trường Sáng Chế Mở -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card hover:shadow-xl transition-all duration-300 lego-top-blue flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3.5 py-1 bg-blue-50 text-google-blue text-xs font-black rounded-full border border-blue-200">
+                            TẦNG 1
+                        </span>
+                        <span class="text-slate-500 text-xs font-semibold">
+                            <i class="fa-solid fa-users text-google-blue mr-1"></i> 80–120 Người
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-1">Đấu Trường Sáng Chế Mở</h3>
+                    <p class="text-xs font-bold text-google-blue uppercase tracking-wider mb-4">AI & STEM Hackathon Arena</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Sàn mở linh hoạt trang bị bàn Maker đa năng. Nơi học sinh, phụ huynh và giáo viên đồng sáng chế các nguyên mẫu AI an toàn kết hợp mô hình robot <strong>LEGO Education (SPIKE Prime/Essential)</strong>.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-amber-500"></i>
+                        <span>Đăng cai ngày hội Hackathon 20 đội thi.</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-google-blue"></i>
+                        <span>6 quy trình dự phòng rủi ro kỹ thuật BP-01 đến BP-06.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tầng 2: Studio Lớp Học Tương Lai -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-google-blue shadow-card hover:shadow-xl transition-all duration-300 lego-top-red flex flex-col justify-between relative">
+                <div class="absolute -top-3 right-6 bg-google-blue text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+                    Google Lab
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3.5 py-1 bg-red-50 text-lego-red text-xs font-black rounded-full border border-red-200">
+                            TẦNG 2
+                        </span>
+                        <span class="text-slate-500 text-xs font-semibold">
+                            <i class="fa-solid fa-laptop-code text-lego-red mr-1"></i> Chromebook Studio
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-1">Studio Lớp Học Tương Lai</h3>
+                    <p class="text-xs font-bold text-lego-red uppercase tracking-wider mb-4">Future of the Classroom Studio</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Phòng thí nghiệm chuẩn Google Reference School với trạm Chromebook và màn hình tương tác. Triển khai chuỗi 4 workshop theo 8 xu hướng <em>Google Future of the Classroom</em>, thực hành <strong>Vibe Coding trên Gemini Canvas</strong>.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-chalkboard-user text-lego-red"></i>
+                        <span>Mô hình "Học sinh dạy Học sinh & Thầy cô".</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-code text-google-green"></i>
+                        <span>Lập trình điều khiển LEGO bằng ngôn ngữ tự nhiên.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tầng 3: Vòm Tĩnh Lặng Bảo An -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card hover:shadow-xl transition-all duration-300 lego-top-green flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3.5 py-1 bg-emerald-50 text-google-green text-xs font-black rounded-full border border-emerald-200">
+                            TẦNG 3
+                        </span>
+                        <span class="text-slate-500 text-xs font-semibold">
+                            <i class="fa-solid fa-leaf text-google-green mr-1"></i> Bắc Âu Yên Tĩnh
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-1">Vòm Tĩnh Lặng Bảo An</h3>
+                    <p class="text-xs font-bold text-google-green uppercase tracking-wider mb-4">The Sanctuary Oasis</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Không gian gỗ tự nhiên sáng màu, thảm âm học, ngập tràn ánh sáng trời và cây xanh. Nơi đọc sách sâu, tra cứu an toàn cùng <strong>Gemini NotebookLM</strong>, rèn luyện kỹ năng tự vấn Socratic và phục hồi sức chú ý (Digital Well-being).
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-600 font-medium">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-book-open-reader text-google-green"></i>
+                        <span>Thư viện sách chọn lọc & Thư phòng nghiên cứu PhD.</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-heart-pulse text-amber-500"></i>
+                        <span>Phục hồi năng lượng tinh thần & Cai nghiện Dopamine số.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: 4 ĐỘNG CƠ DÒNG TIỀN BỀN VỮNG (Hybrid Cashflow) -->
+    <section id="dong-tien" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50/70 rounded-3xl border border-slate-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-google-green border border-emerald-200 uppercase tracking-wider mb-3">
+                Kinh Tế Doanh Nghiệp Xã Hội Lai
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                4 Động Cơ Tạo Dòng Tiền Tự Chủ Bền Vững
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Cửa mở phục vụ cộng đồng học sinh bình đẳng, tự chủ ngân sách nhờ 4 động cơ tạo doanh thu định kỳ.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Động cơ 1 -->
-            <div class="wood-card p-6 rounded-2xl border border-stone-200">
-                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold mb-4">
-                    <i class="fa-solid fa-hand-holding-dollar text-lg"></i>
+            <!-- Động cơ 1: CSR & Grants -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold mb-4 border border-amber-200">
+                        <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-900 mb-1">1. Quỹ CSR & Grants</h4>
+                    <p class="text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-3">Anchor CSR Grants</p>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Tiếp nhận tài trợ từ LEGO Việt Nam (KCN VSIP III Bình Dương), Google.org và các quỹ quốc tế. Trích phí quản trị Quỹ & R&D mô hình.
+                    </p>
                 </div>
-                <h3 class="font-bold text-lg text-ansan-navy mb-2">1. Quỹ CSR & Grants</h3>
-                <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Anchor CSR Grants</p>
-                <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                    Tiếp nhận tài trợ từ LEGO Việt Nam (KCN VSIP III Bình Dương), Google.org và học bổng YSEALI. Thu 15–20% phí quản trị Quỹ & R&D.
-                </p>
-                <div class="text-[11px] font-semibold text-amber-800 bg-amber-50 py-1.5 px-2.5 rounded-lg border border-amber-200">
+                <div class="text-[11px] font-bold text-amber-800 bg-amber-50 py-1.5 px-3 rounded-xl border border-amber-200 text-center">
                     Ngân sách mồi: 500tr – 2 tỷ VNĐ/năm
                 </div>
             </div>
 
-            <!-- Động cơ 2 -->
-            <div class="wood-card p-6 rounded-2xl border border-stone-200">
-                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center font-bold mb-4">
-                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+            <!-- Động cơ 2: Workshop B2B/B2C -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-blue flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 rounded-xl bg-blue-50 text-google-blue flex items-center justify-center font-bold mb-4 border border-blue-200">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-900 mb-1">2. Workshop B2B/B2C</h4>
+                    <p class="text-[11px] font-bold text-google-blue uppercase tracking-wider mb-3">Future of the Classroom</p>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Chuỗi 4 buổi Vibe Coding trên Gemini Canvas, tra cứu NotebookLM và chế tác STEAM cho đoàn giáo viên B2B hoặc trại cuối tuần học sinh B2C.
+                    </p>
                 </div>
-                <h3 class="font-bold text-lg text-ansan-navy mb-2">2. Workshop B2B/B2C</h3>
-                <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Future of the Classroom</p>
-                <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                    Chuỗi 4 buổi Vibe Coding trên Gemini Canvas, tra cứu NotebookLM và chế tác STEAM cho đoàn giáo viên B2B hoặc trại cuối tuần học sinh B2C.
-                </p>
-                <div class="text-[11px] font-semibold text-blue-800 bg-blue-50 py-1.5 px-2.5 rounded-lg border border-blue-200">
+                <div class="text-[11px] font-bold text-google-blue bg-blue-50 py-1.5 px-3 rounded-xl border border-blue-200 text-center">
                     Doanh thu: 30tr – 80tr / chuỗi 4 buổi
                 </div>
             </div>
 
-            <!-- Động cơ 3 -->
-            <div class="wood-card p-6 rounded-2xl border border-stone-200">
-                <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center font-bold mb-4">
-                    <i class="fa-solid fa-trophy text-lg"></i>
+            <!-- Động cơ 3: Turnkey Hackathon -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-red flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 rounded-xl bg-red-50 text-lego-red flex items-center justify-center font-bold mb-4 border border-red-200">
+                        <i class="fa-solid fa-trophy text-xl"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-900 mb-1">3. Turnkey Hackathon</h4>
+                    <p class="text-[11px] font-bold text-lego-red uppercase tracking-wider mb-3">Chìa Khóa Trao Tay</p>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Chuyển giao trọn gói quy trình tổ chức ngày hội AI & STEM Hackathon 20 đội cho các trường quốc tế, tư thục và Sở GD&ĐT.
+                    </p>
                 </div>
-                <h3 class="font-bold text-lg text-ansan-navy mb-2">3. Turnkey Hackathon</h3>
-                <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Chìa Khóa Trao Tay Sự Kiện</p>
-                <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                    Chuyển giao trọn gói quy trình tổ chức ngày hội AI & STEM Hackathon 20 đội cho các trường quốc tế, tư thục và Sở GD&ĐT.
-                </p>
-                <div class="text-[11px] font-semibold text-red-800 bg-red-50 py-1.5 px-2.5 rounded-lg border border-red-200">
+                <div class="text-[11px] font-bold text-lego-red bg-red-50 py-1.5 px-3 rounded-xl border border-red-200 text-center">
                     Doanh thu: 50tr – 150tr / sự kiện
                 </div>
             </div>
 
-            <!-- Động cơ 4 -->
-            <div class="wood-card p-6 rounded-2xl border border-stone-200">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold mb-4">
-                    <i class="fa-solid fa-box-open text-lg"></i>
+            <!-- Động cơ 4: Nhượng quyền ANSAN-in-a-Box -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 rounded-xl bg-emerald-50 text-google-green flex items-center justify-center font-bold mb-4 border border-emerald-200">
+                        <i class="fa-solid fa-box-open text-xl"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-900 mb-1">4. Nhượng Quyền & Kiểm Định</h4>
+                    <p class="text-[11px] font-bold text-google-green uppercase tracking-wider mb-3">ANSAN-in-a-Box & SaaS</p>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Chuyển giao góc thư viện mở thu nhỏ và thu phí cấp chứng nhận chuẩn <em>Bảo An AI™</em> thường niên theo bộ tiêu chuẩn 65/35.
+                    </p>
                 </div>
-                <h3 class="font-bold text-lg text-ansan-navy mb-2">4. Nhượng Quyền & SaaS</h3>
-                <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">ANSAN-in-a-Box & Kiểm Định</p>
-                <p class="text-xs text-stone-600 leading-relaxed mb-4">
-                    Chuyển giao góc thư viện mở thu nhỏ và thu phí cấp chứng nhận chuẩn <em>Bảo An AI™</em> thường niên theo bộ tiêu chuẩn 65/35.
-                </p>
-                <div class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 py-1.5 px-2.5 rounded-lg border border-emerald-200">
+                <div class="text-[11px] font-bold text-google-green bg-emerald-50 py-1.5 px-3 rounded-xl border border-emerald-200 text-center">
                     Dòng tiền bản quyền SaaS định kỳ
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Đối Tác Chiến Lược LEGO & Google -->
-    <section id="doi-tac" class="py-24 bg-ansan-navy text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-400 font-bold uppercase tracking-widest text-xs">Hợp Tác Toàn Cầu</span>
-                <h2 class="text-3xl sm:text-5xl font-bold font-serif-title mt-2 mb-4">
-                    Điểm Chạm Với LEGO Việt Nam & Google
-                </h2>
-                <p class="text-slate-300 text-base sm:text-lg">
-                    Sự hội tụ giữa đôi bàn tay sáng tạo LEGO, bộ não công nghệ Google và trái tim sư phạm nhân văn Việt Nam.
-                </p>
+    <!-- SECTION 4: ĐỐI TÁC CHIẾN LƯỢC LEGO & GOOGLE -->
+    <section id="doi-tac" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-google-blue border border-blue-200 uppercase tracking-wider mb-3">
+                Giao Thoa Đỉnh Cao
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                Điểm Chạm Cùng LEGO Việt Nam & Google
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Hội tụ giữa đôi bàn tay chế tác LEGO, trí tuệ công nghệ Google và trái tim sư phạm nhân văn Việt Nam.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- LEGO Box -->
+            <div class="p-8 sm:p-10 rounded-3xl bg-white border-2 border-red-200 shadow-card lego-top-red">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-lego-red text-white flex items-center justify-center text-2xl font-black shadow-md">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">LEGO Việt Nam & The LEGO Foundation</h3>
+                        <p class="text-xs text-lego-red font-bold tracking-wide uppercase">Learning Through Play & Digital Child Safety</p>
+                    </div>
+                </div>
+                <ul class="space-y-4 text-sm text-slate-700">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-lego-red mt-1"></i>
+                        <span><strong>Học thông qua thử sai:</strong> Trẻ em lắp ghép, tháo ra, sửa lỗi mà không sợ phán xét – hoàn toàn đồng nhất với triết lý "Dũng cảm học từ thử sai" của ANSAN.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-lego-red mt-1"></i>
+                        <span><strong>Cam kết An toàn Trẻ em:</strong> Giải quyết đúng bài toán Digital Child Safety khắt khe của LEGO tại nhà máy xanh VSIP III Bình Dương.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-lego-red mt-1"></i>
+                        <span><strong>Học cụ STEAM bản quyền:</strong> Trang bị bộ công cụ LEGO SPIKE Prime/Essential cho 80–120 học sinh mỗi phiên Hackathon.</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- LEGO Box -->
-                <div class="p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl font-bold shadow-md">
-                            <i class="fa-solid fa-cubes"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold">LEGO Việt Nam & The LEGO Foundation</h3>
-                            <p class="text-xs text-red-300 font-medium tracking-wide uppercase">Learning Through Play & Digital Child Safety</p>
-                        </div>
+            <!-- Google Box -->
+            <div class="p-8 sm:p-10 rounded-3xl bg-white border-2 border-blue-200 shadow-card lego-top-blue">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-google-blue text-white flex items-center justify-center text-2xl font-black shadow-md">
+                        <i class="fa-brands fa-google"></i>
                     </div>
-                    <ul class="space-y-4 text-sm text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>Học thông qua thử sai:</strong> Trẻ em lắp ghép, tháo ra, sửa lỗi mà không sợ phán xét – hoàn toàn đồng nhất với triết lý "Dũng cảm học từ thử sai" của ANSAN.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>Cam kết An toàn Trẻ em:</strong> Giải quyết đúng bài toán Digital Child Safety khắt khe của LEGO tại nhà máy xanh VSIP III Bình Dương.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>Học cụ STEAM bản quyền:</strong> Trang bị bộ công cụ LEGO SPIKE Prime/Essential cho 80–120 học sinh mỗi phiên Hackathon.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Google Box -->
-                <div class="p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl font-bold shadow-md">
-                            <i class="fa-brands fa-google"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold">Google for Education & Google.org</h3>
-                            <p class="text-xs text-blue-300 font-medium tracking-wide uppercase">Future of the Classroom & Responsible AI</p>
-                        </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">Google for Education & Google.org</h3>
+                        <p class="text-xs text-google-blue font-bold tracking-wide uppercase">Future of the Classroom & Responsible AI</p>
                     </div>
-                    <ul class="space-y-4 text-sm text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>Hạ tầng tư duy số:</strong> Tận dụng sức mạnh của Google Gemini, LearnLM, NotebookLM và Gemini Canvas phục vụ học tập cá nhân hóa.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>8 Xu hướng Lớp học Tương lai:</strong> Triển khai các chuyên đề Digital Responsibility, Computational Thinking, và Student-Led Agency.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
-                            <span><strong>Hồ sơ Chuyên gia Quốc tế:</strong> Dự án được bảo chứng bởi Hồ sơ chính danh Google Directory của tác giả Phạm Bá Hồng Sơn.</span>
-                        </li>
-                    </ul>
                 </div>
+                <ul class="space-y-4 text-sm text-slate-700">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-google-blue mt-1"></i>
+                        <span><strong>Hạ tầng tư duy số:</strong> Tận dụng sức mạnh của Google Gemini, LearnLM, NotebookLM và Gemini Canvas phục vụ học tập cá nhân hóa.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-google-blue mt-1"></i>
+                        <span><strong>8 Xu hướng Lớp học Tương lai:</strong> Triển khai các chuyên đề Digital Responsibility, Computational Thinking, và Student-Led Agency.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-google-blue mt-1"></i>
+                        <span><strong>Hồ sơ Chuyên gia Quốc tế:</strong> Dự án được bảo chứng bởi Hồ sơ chính danh Google Directory của tác giả sáng lập.</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Tài Nguyên Mã Nguồn Mở (Open Source Hub - MIT License) -->
-    <section id="open-source" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- SECTION 5: TÀI NGUYÊN MÃ NGUỒN MỞ MIT (Cleaned of Personal Data) -->
+    <section id="open-source" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50/70 rounded-3xl border border-slate-200">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Mã Nguồn Mở MIT License</span>
-            <h2 class="text-3xl sm:text-5xl font-bold font-serif-title text-ansan-navy mt-2 mb-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider mb-3">
+                Mã Nguồn Mở MIT License
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
                 Kho Tài Nguyên Số Mở Thư Viện ANSAN
             </h2>
-            <p class="text-stone-600 text-base sm:text-lg">
-                Theo chiến lược Sở hữu Trí tuệ Lưỡng cực (Dual-IP), toàn bộ quy trình, biểu mẫu dự toán và cẩm nang Hackathon được phát hành mã nguồn mở miễn phí.
+            <p class="text-slate-600 text-base sm:text-lg">
+                Theo chiến lược Sở hữu Trí tuệ Lưỡng cực (Dual-IP), toàn bộ quy trình, biểu mẫu dự toán và cẩm nang Hackathon được phát hành công khai miễn phí.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Doc 1 -->
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Doc 1: Concept Note -->
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow flex flex-col justify-between">
                 <div>
-                    <div class="text-amber-600 text-3xl mb-4"><i class="fa-regular fa-file-lines"></i></div>
-                    <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-md uppercase">Concept Note</span>
-                    <h3 class="font-bold text-base text-ansan-navy mt-2 mb-2">Bản Concept Note 2 Trang</h3>
-                    <p class="text-xs text-stone-600 mb-4">
+                    <div class="text-amber-500 text-3xl mb-4"><i class="fa-regular fa-file-lines"></i></div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-800 rounded-md uppercase border border-amber-200">Concept Note</span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2">Bản Concept Note 2 Trang</h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
                         Bản tóm tắt ý tưởng dự án chuẩn quốc tế gửi quỹ CSR của LEGO Việt Nam và Google for Education.
                     </p>
                 </div>
                 <a href="Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md" target="_blank" 
-                   class="text-xs font-bold text-ansan-primary hover:text-amber-600 flex items-center justify-between pt-3 border-t border-stone-100">
+                   class="text-xs font-bold text-google-blue hover:text-blue-700 flex items-center justify-between pt-3 border-t border-slate-100">
                     <span>Xem file Markdown</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
 
-            <!-- Doc 2 -->
-            <div class="bg-white p-6 rounded-2xl border-2 border-amber-500/40 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <!-- Doc 2: Partner Proposal -->
+            <div class="bg-white p-7 rounded-3xl border-2 border-google-blue shadow-sm hover:shadow-md transition-all lego-top-blue flex flex-col justify-between">
                 <div>
-                    <div class="text-blue-600 text-3xl mb-4"><i class="fa-regular fa-file-word"></i></div>
-                    <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-100 text-blue-800 rounded-md uppercase">Proposal DOCX</span>
-                    <h3 class="font-bold text-base text-ansan-navy mt-2 mb-2">Hồ Sơ Dự Án Đối Tác</h3>
-                    <p class="text-xs text-stone-600 mb-4">
-                        Hồ sơ hợp tác chiến lược hoàn chỉnh dành cho Trường học, Tập đoàn và Doanh nghiệp tài trợ.
+                    <div class="text-google-blue text-3xl mb-4"><i class="fa-regular fa-file-word"></i></div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-google-blue rounded-md uppercase border border-blue-200">Proposal DOCX</span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2">Hồ Sơ Dự Án Đối Tác</h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Hồ sơ hợp tác chiến lược hoàn chỉnh (10 chương) dành cho Trường học, Tập đoàn và Doanh nghiệp tài trợ.
                     </p>
                 </div>
-                <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md" target="_blank" class="text-xs font-bold text-ansan-primary hover:text-amber-600">Bản MD</a>
-                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx" download class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-1 rounded hover:bg-amber-100">Tải DOCX</a>
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md" target="_blank" class="text-xs font-bold text-google-blue hover:text-blue-700">Xem Bản MD</a>
+                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx" download class="text-xs font-bold text-white bg-google-blue px-3 py-1.5 rounded-lg hover:bg-blue-600 shadow-sm">Tải DOCX</a>
                 </div>
             </div>
 
-            <!-- Doc 3 -->
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <!-- Doc 3: AI Skill Orchestrator -->
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green flex flex-col justify-between">
                 <div>
-                    <div class="text-purple-600 text-3xl mb-4"><i class="fa-solid fa-book-bookmark"></i></div>
-                    <span class="text-[10px] font-bold px-2.5 py-1 bg-purple-100 text-purple-800 rounded-md uppercase">Whitepaper</span>
-                    <h3 class="font-bold text-base text-ansan-navy mt-2 mb-2">Bạch Thư Master Orchestrator</h3>
-                    <p class="text-xs text-stone-600 mb-4">
-                        Hệ điều hành cung thân Bảo An AI™, triết lý Atman - Brahman, tư thế ngồi làm việc và lộ trình PhD.
-                    </p>
-                </div>
-                <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <a href="BAO_AN_AI_HE_DIEU_HANH_CUNG_THAN_MASTER_DOC.md" target="_blank" class="text-xs font-bold text-ansan-primary hover:text-amber-600">Bản MD</a>
-                    <a href="BAO_AN_AI_HE_DIEU_HANH_CUNG_THAN_MASTER_DOC.docx" download class="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-1 rounded hover:bg-purple-100">Tải DOCX</a>
-                </div>
-            </div>
-
-            <!-- Doc 4 -->
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-                <div>
-                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-robot"></i></div>
-                    <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-md uppercase">AI Skill Native</span>
-                    <h3 class="font-bold text-base text-ansan-navy mt-2 mb-2">Skill AI Điều Phối Trung Tâm</h3>
-                    <p class="text-xs text-stone-600 mb-4">
-                        Mã nguồn skill <code class="bg-stone-100 px-1 py-0.5 rounded text-[11px]">ansan-bao-an-ai-orchestrator</code> tích hợp trong Google Antigravity.
+                    <div class="text-google-green text-3xl mb-4"><i class="fa-solid fa-robot"></i></div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-google-green rounded-md uppercase border border-emerald-200">AI Skill Native</span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2">Skill AI Điều Phối Trung Tâm</h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Mã nguồn skill <code class="bg-slate-100 px-1 py-0.5 rounded text-[11px] font-mono">ansan-bao-an-ai-orchestrator</code> tích hợp trong Google Antigravity.
                     </p>
                 </div>
                 <a href="ansan-bao-an-ai-orchestrator.md" target="_blank" 
-                   class="text-xs font-bold text-ansan-primary hover:text-amber-600 flex items-center justify-between pt-3 border-t border-stone-100">
+                   class="text-xs font-bold text-google-green hover:text-green-700 flex items-center justify-between pt-3 border-t border-slate-100">
                     <span>Xem mã nguồn Skill</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -584,61 +817,62 @@
         </div>
     </section>
 
-    <!-- Section 6: Cam Kết An Toàn Số & Pháp Lý -->
-    <section id="an-toan-so" class="py-20 bg-stone-100/80 border-t border-stone-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-20 h-20 rounded-3xl bg-amber-500/10 border border-amber-500/20 text-amber-700 flex items-center justify-center text-3xl flex-shrink-0">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-ansan-navy mb-3">Cam Kết An Toàn Số Trẻ Em & Tuân Thủ Pháp Lý Toàn Diện</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                            Mô hình Thư viện Mở ANSAN tương thích hoàn toàn với các văn bản chỉ đạo của Bộ Giáo dục và Đào tạo cùng tiêu chuẩn an toàn dữ liệu quốc tế:
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-stone-600 font-medium">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Thông tư 18/2023/TT-BGDĐT về thư viện trường học hiện đại.</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Công văn 2422/BGDĐT-GDTrH về ứng dụng AI an toàn.</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> UNESCO AI Competency Framework & Chính sách LEGO.</div>
-                        </div>
+    <!-- SECTION 6: CAM KẾT AN TOÀN SỐ & PHÁP LÝ -->
+    <section id="an-toan-so" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto bg-white">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-card lego-top-green">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 rounded-3xl bg-emerald-50 border border-emerald-200 text-google-green flex items-center justify-center text-3xl flex-shrink-0">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Cam Kết An Toàn Trẻ Em & Tuân Thủ Pháp Lý Toàn Diện</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Mô hình Thư viện Mở ANSAN tương thích hoàn toàn với các văn bản pháp quy của Bộ Giáo dục & Đào tạo cùng tiêu chuẩn an toàn số quốc tế:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 font-semibold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Thông tư 18/2023/TT-BGDĐT: Chuẩn hóa thư viện trường học hiện đại.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Công văn 2422/BGDĐT-GDTrH: Ứng dụng AI có trách nhiệm.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Nghị định 13/2023/NĐ-CP: Bảo vệ dữ liệu cá nhân (Zero-PII).</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> UNESCO AI Competency Framework & Chính sách An toàn LEGO.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 7: Liên Hệ & Hợp Tác -->
-    <section id="lien-he" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Kết Nối Đồng Kiến Tạo</span>
-        <h2 class="text-3xl sm:text-5xl font-bold font-serif-title text-ansan-navy mt-2 mb-6">
+    <!-- SECTION 7: ĐĂNG KÝ HỢP TÁC ĐỐI TÁC -->
+    <section id="lien-he" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center bg-white">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-google-blue border border-blue-200 uppercase tracking-wider mb-3">
+            Kết Nối Đồng Kiến Tạo
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
             Đăng Ký Tham Gia Liên Minh Thư Viện Mở ANSAN
         </h2>
-        <p class="text-stone-600 text-base sm:text-lg mb-10 leading-relaxed">
-            Dù Quý vị là Ban Giám hiệu mong muốn xây dựng góc thư viện <strong>ANSAN-in-a-Box</strong>, doanh nghiệp tìm kiếm cơ hội tài trợ CSR, hay phụ huynh quan tâm đến trại sáng chế cuối tuần – chúng tôi luôn sẵn sàng đồng hành.
+        <p class="text-slate-600 text-base sm:text-lg mb-10 leading-relaxed">
+            Dù Quý vị là Ban Giám hiệu mong muốn triển khai góc <strong>ANSAN-in-a-Box</strong>, doanh nghiệp tìm kiếm cơ hội tài trợ CSR, hay phụ huynh quan tâm đến trại sáng chế cuối tuần – chúng tôi luôn sẵn sàng đồng hành.
         </p>
 
-        <div class="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-lg text-left">
+        <!-- Contact Form with Pure White Card -->
+        <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl text-left lego-top-blue">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Họ và Tên</label>
-                    <input type="text" placeholder="Thầy/Cô hoặc Đại diện Doanh nghiệp" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Họ và Tên</label>
+                    <input type="text" placeholder="Thầy/Cô hoặc Đại diện Doanh nghiệp" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-google-blue focus:ring-2 focus:ring-blue-100 transition">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Email Liên Hệ</label>
-                    <input type="email" placeholder="email@donvi.edu.vn" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Liên Hệ</label>
+                    <input type="email" placeholder="email@donvi.edu.vn" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-google-blue focus:ring-2 focus:ring-blue-100 transition">
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Đơn Vị / Trường Học</label>
-                    <input type="text" placeholder="Tên trường / Doanh nghiệp" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Đơn Vị / Trường Học</label>
+                    <input type="text" placeholder="Tên trường / Đơn vị công tác" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-google-blue focus:ring-2 focus:ring-blue-100 transition">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Gói Hợp Tác Quan Tâm</label>
-                    <select class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-amber-500 bg-white">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Gói Hợp Tác Quan Tâm</label>
+                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-google-blue focus:ring-2 focus:ring-blue-100 transition bg-white">
                         <option>Gói 1: Nhượng quyền ANSAN-in-a-Box cho Trường học</option>
                         <option>Gói 2: Đăng ký Kiểm định Đạt chuẩn Bảo An AI™ (65/35)</option>
                         <option>Gói 3: Tổ chức Ngày hội AI & STEM Hackathon trọn gói</option>
@@ -649,69 +883,70 @@
             </div>
 
             <div class="mb-6">
-                <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2">Nội Dung Đề Xuất / Lời Nhắn</label>
-                <textarea rows="4" placeholder="Chia sẻ mong muốn hoặc yêu cầu cụ thể của Quý vị..." class="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-amber-500"></textarea>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nội Dung Đề Xuất / Lời Nhắn</label>
+                <textarea rows="4" placeholder="Chia sẻ mong muốn hoặc yêu cầu cụ thể của Quý vị..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-google-blue focus:ring-2 focus:ring-blue-100 transition"></textarea>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-stone-100">
-                <div class="text-xs text-stone-500">
-                    <i class="fa-solid fa-lock text-emerald-600 mr-1"></i> Thông tin được bảo mật theo chuẩn Zero-PII.
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500 font-medium">
+                    <i class="fa-solid fa-lock text-google-green mr-1"></i> Thông tin được bảo mật theo tiêu chuẩn Zero-PII.
                 </div>
                 <button type="button" onclick="alert('Cảm ơn Quý Đối tác đã gửi yêu cầu! Ban Điều hành Dự án Thư viện Mở ANSAN sẽ liên hệ lại trong vòng 24 giờ làm việc.')" 
-                        class="w-full sm:w-auto px-8 py-3.5 bg-ansan-primary hover:bg-ansan-navy text-white text-sm font-bold rounded-xl shadow-md transition-all">
+                        class="w-full sm:w-auto px-8 py-3.5 bg-google-blue hover:bg-blue-600 text-white text-sm font-bold rounded-xl shadow-md transition-all">
                     Gửi Đăng Ký Đồng Hành
                 </button>
             </div>
         </div>
 
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-stone-600">
-            <div>
-                <div class="font-bold text-ansan-navy mb-1"><i class="fa-solid fa-envelope text-amber-600 mr-2"></i> Email Tiếp Nhận</div>
-                <div class="text-xs">contact@baoan.ai.vn<br>banthuky@ansan.edu.vn</div>
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-slate-600">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1"><i class="fa-solid fa-envelope text-google-red mr-2"></i> Email Tiếp Nhận</div>
+                <div class="text-xs font-medium">contact@baoan.ai.vn<br>banthuky@ansan.edu.vn</div>
             </div>
-            <div>
-                <div class="font-bold text-ansan-navy mb-1"><i class="fa-solid fa-globe text-amber-600 mr-2"></i> Tên Miền Chính Thức</div>
-                <div class="text-xs"><a href="https://ansan.pro" class="text-amber-600 font-semibold hover:underline">https://ansan.pro</a><br>https://baoan.ai.vn</div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1"><i class="fa-solid fa-globe text-google-blue mr-2"></i> Tên Miền Chính Thức</div>
+                <div class="text-xs font-medium"><a href="https://ansan.pro" class="text-google-blue font-bold hover:underline">https://ansan.pro</a><br>https://baoan.ai.vn</div>
             </div>
-            <div>
-                <div class="font-bold text-ansan-navy mb-1"><i class="fa-solid fa-location-dot text-amber-600 mr-2"></i> Không Gian Thí Điểm</div>
-                <div class="text-xs">Hà Nội • TP.HCM • Bình Dương (Khu vực VSIP III)</div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-1"><i class="fa-solid fa-location-dot text-google-green mr-2"></i> Không Gian Trọng Điểm</div>
+                <div class="text-xs font-medium">Hà Nội • TP.HCM • Bình Dương (Khu vực VSIP III)</div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-ansan-dark text-stone-400 py-16 border-t border-stone-800 text-sm">
+    <!-- FOOTER (Clean Light Nordic Design with 4-Color Accent) -->
+    <footer class="bg-slate-50 text-slate-600 py-16 border-t border-slate-200 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-stone-800">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-slate-200">
                 <div class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="ANSAN Logo" class="h-10 w-10 object-contain rounded-lg">
+                    <img src="assets/logo.png" alt="ANSAN Logo" class="h-10 w-10 object-contain rounded-lg border border-slate-200">
                     <div>
-                        <div class="font-bold text-white text-base">THƯ VIỆN MỞ ANSAN</div>
-                        <div class="text-xs text-amber-500 font-medium">Bảo an AI – Sáng tạo Hân hoan (ansan.pro)</div>
+                        <div class="font-black text-slate-900 text-base">THƯ VIỆN MỞ ANSAN</div>
+                        <div class="text-xs text-google-blue font-semibold">Bảo an AI – Sáng tạo Hân hoan (ansan.pro)</div>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-6 text-xs text-stone-400">
-                    <a href="https://github.com/mikepham358/ansan" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github text-base mr-1"></i> github.com/mikepham358/ansan</a>
-                    <a href="https://ansan.pro" class="hover:text-white transition"><i class="fa-solid fa-globe text-base mr-1"></i> ansan.pro</a>
-                    <a href="https://baoan.ai.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-link text-base mr-1"></i> baoan.ai.vn</a>
-                    <a href="LICENSE" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-scale-balanced text-base mr-1"></i> MIT License</a>
+                <div class="flex flex-wrap items-center gap-6 text-xs text-slate-600 font-semibold">
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" class="hover:text-slate-900 transition flex items-center gap-1.5"><i class="fa-brands fa-github text-base"></i> github.com/mikepham358/ansan</a>
+                    <a href="https://ansan.pro" class="hover:text-slate-900 transition flex items-center gap-1.5"><i class="fa-solid fa-globe text-base text-google-blue"></i> ansan.pro</a>
+                    <a href="https://baoan.ai.vn" target="_blank" class="hover:text-slate-900 transition flex items-center gap-1.5"><i class="fa-solid fa-link text-base text-google-green"></i> baoan.ai.vn</a>
+                    <a href="LICENSE" target="_blank" class="hover:text-slate-900 transition flex items-center gap-1.5"><i class="fa-solid fa-scale-balanced text-base text-lego-red"></i> MIT License</a>
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <div>
                     Copyright &copy; 2026 <strong>ThS. Phạm Bá Hồng Sơn</strong> (Viện trưởng Sáng lập Thư viện Mở ANSAN & Hệ sinh thái Bảo An AI™).
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-                    <span>Được bảo chứng bởi Google for Education Directory & Nghiên cứu Luận án PhD.</span>
+                    <span class="inline-block w-2 h-2 rounded-full bg-google-green"></span>
+                    <span>Được bảo chứng bởi Google for Education Directory & Nghiên cứu Luận án Tiến sĩ (PhD).</span>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Scripts -->
     <script>
         // Mobile menu toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
@@ -719,6 +954,34 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Socratic Demo Toggle
+        function showDemo(type) {
+            const badDemo = document.getElementById('demo-bad');
+            const goodDemo = document.getElementById('demo-good');
+            const badTab = document.getElementById('tab-bad');
+            const goodTab = document.getElementById('tab-good');
+
+            if (type === 'good') {
+                badDemo.classList.add('hidden');
+                goodDemo.classList.remove('hidden');
+
+                goodTab.classList.add('bg-white', 'text-slate-800', 'shadow-sm', 'border', 'border-slate-200');
+                goodTab.classList.remove('text-slate-600');
+
+                badTab.classList.remove('bg-white', 'text-slate-800', 'shadow-sm', 'border', 'border-slate-200');
+                badTab.classList.add('text-slate-600');
+            } else {
+                goodDemo.classList.add('hidden');
+                badDemo.classList.remove('hidden');
+
+                badTab.classList.add('bg-white', 'text-slate-800', 'shadow-sm', 'border', 'border-slate-200');
+                badTab.classList.remove('text-slate-600');
+
+                goodTab.classList.remove('bg-white', 'text-slate-800', 'shadow-sm', 'border', 'border-slate-200');
+                goodTab.classList.add('text-slate-600');
+            }
+        }
     </script>
 </body>
 </html>

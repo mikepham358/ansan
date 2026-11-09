@@ -82,53 +82,13 @@ Thư viện ANSAN áp dụng mô hình kinh tế **Doanh nghiệp Xã hội Lai 
 | [`index.html`](./index.html) | Web Portal | Cổng giao diện trực tuyến chính thức của Thư viện Mở ANSAN chạy trên tên miền `ansan.pro`. |
 | [`Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md`](./Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md) | Markdown | Bản Concept Note 2 trang chuẩn quốc tế gửi Quỹ CSR của LEGO Việt Nam và Google for Education. |
 | [`DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md`](./DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md) | Markdown | Hồ Sơ Dự Án Hợp Tác Đối Tác hoàn chỉnh (10 chương) cho Trường học & Doanh nghiệp. |
-| [`BAO_AN_AI_HE_DIEU_HANH_CUNG_THAN_MASTER_DOC.md`](./BAO_AN_AI_HE_DIEU_HANH_CUNG_THAN_MASTER_DOC.md) | Markdown | Bạch thư Hệ Điều Hành Cung Thân Bảo An AI™ (Master Blueprint cho PhD & Startup). |
 | [`ansan-bao-an-ai-orchestrator.md`](./ansan-bao-an-ai-orchestrator.md) | Skill YAML | Đặc tả cấu hình Skill Master Orchestrator tích hợp trực tiếp trong Google Antigravity. |
 | [`CNAME`](./CNAME) | Config | Tệp cấu hình tên miền tùy chỉnh `ansan.pro` cho GitHub Pages. |
 | [`LICENSE`](./LICENSE) | Legal | Giấy phép mã nguồn mở MIT License ghi nhận bản quyền tác giả. |
 
 ---
 
-## 🚀 6. HƯỚNG DẪN CẤU HÌNH TÊN MIỀN `ansan.pro` TRÊN GITHUB PAGES
-
-Kho mã nguồn này đã được tối ưu sẵn sàng 100% để xuất bản thành website tại **`https://ansan.pro`**.
-
-### Bước 1: Đẩy mã nguồn lên GitHub của bạn
-```bash
-git init
-git add .
-git commit -m "feat: Launch ANSAN Open Library model portal on ansan.pro"
-git branch -M main
-git remote add origin https://github.com/mikepham358/ansan.git
-git push -u origin main
-```
-
-### Bước 2: Bật GitHub Pages
-1. Truy cập vào Repository trên GitHub: `https://github.com/mikepham358/ansan`
-2. Vào **Settings** $\rightarrow$ **Pages**
-3. Mục **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: `main` / folder: `/ (root)` $\rightarrow$ bấm **Save**
-4. Mục **Custom domain**:
-   - Nhập: `ansan.pro` (tệp `CNAME` trong repo sẽ tự động kích hoạt)
-   - Tích chọn: **Enforce HTTPS**
-
-### Bước 3: Cấu hình DNS tại nhà cung cấp tên miền của `ansan.pro`
-Đăng nhập vào trang quản trị tên miền `ansan.pro` (Cloudflare, Namecheap, GoDaddy, PA Vietnam, v.v.) và thêm các bản ghi DNS sau:
-
-| Loại (Type) | Tên (Host / Name) | Giá Trị (Target / IP Address) | Ghi Chú |
-| :---: | :---: | :--- | :--- |
-| **A** | `@` | `185.199.108.153` | IP GitHub Pages 1 |
-| **A** | `@` | `185.199.109.153` | IP GitHub Pages 2 |
-| **A** | `@` | `185.199.110.153` | IP GitHub Pages 3 |
-| **A** | `@` | `185.199.111.153` | IP GitHub Pages 4 |
-| **CNAME** | `www` | `mikepham358.github.io.` | Điều hướng www sang GitHub |
-
-Sau 5–15 phút cập nhật DNS, website của bạn sẽ tự động chạy bảo mật HTTPS tại **`https://ansan.pro`**!
-
----
-
-## 🛡️ 7. CAM KẾT AN TOÀN SỐ & PHÁP LÝ
+## 🛡️ 6. CAM KẾT AN TOÀN SỐ & PHÁP LÝ
 
 * **Nghị định 13/2023/NĐ-CP:** Bảo vệ dữ liệu cá nhân của người học tại Việt Nam.
 * **Thông tư 18/2023/TT-BGDĐT:** Chuẩn hóa thư viện trường học hiện đại.
@@ -137,7 +97,7 @@ Sau 5–15 phút cập nhật DNS, website của bạn sẽ tự động chạy 
 
 ---
 
-## 📬 8. LIÊN HỆ ĐỒNG HÀNH & KÝ KẾT ĐỐI TÁC
+## 📬 7. LIÊN HỆ ĐỒNG HÀNH & KÝ KẾT ĐỐI TÁC
 
 * **Đơn vị chủ trì:** Ban Điều Hành Hệ Sinh Thái Bảo An AI & Thư Viện Mở ANSAN
 * **Chủ nhiệm:** ThS. Phạm Bá Hồng Sơn (Viện trưởng Sáng lập)

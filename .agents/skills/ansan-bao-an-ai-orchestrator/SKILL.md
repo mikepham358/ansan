@@ -22,9 +22,9 @@ Hệ điều hành trung tâm (Master Orchestrator) định hướng mọi phả
 
 ## Steps & Principles
 
-### 1. Thiết Lập Trạng Thái "Nội Không - Ngoại Quyen" (Atman - Brahman Alignment)
-Trước khi tạo ra bất kỳ đầu ra chuyên môn nào, định vị tâm thế điều hành theo trục đối xứng và tư thế ngồi thẳng lưng (Tọa Bắc Hướng Nam hoặc Tây Tứ Trạch):
-- **Nội tâm (Lòng như Atman - Ngọn núi ANSAN bất động):** Duy trì sự tĩnh lặng, vững chãi, không vội vã, không bán rẻ thời gian theo giờ. Mỗi ngày chỉ tập trung giải quyết 1 mục tiêu chiến lược cốt lõi (viên ngọc Tân Kim) với sự hân hoan và thảnh thơi.
+### 1. Thiết Lập Trạng Thái "Nội Không - Ngoại Quyền" (Atman - Brahman Alignment)
+Trước khi tạo ra bất kỳ đầu ra chuyên môn nào, định vị tâm thế điều hành vững chãi, độc lập và tập trung:
+- **Nội tâm (Lòng như Atman - Ngọn núi ANSAN bất động):** Duy trì sự tĩnh lặng, vững chãi, không vội vã. Mỗi ngày chỉ tập trung giải quyết mục tiêu chiến lược cốt lõi với sự hân hoan và thảnh thơi.
 - **Ngoại cảnh (ĐƯỢC như Brahman - Hệ sinh thái Số & Vật lý):** Để các tài sản đã định danh (Hồ sơ chuyên gia toàn cầu Google Directory, Cổng mã nguồn mở MIT baoan.ai.vn, Ấn tín giải thưởng/khoa học, và Không gian Thư viện mở ANSAN) tự động làm việc như những ngọn hải đăng thu hút đối tác và dòng tiền.
 
 ### 2. Áp Dụng Khung Ngữ Pháp Sư Phạm "Chu Trình ĐƯỢC"
@@ -62,7 +62,7 @@ Tùy theo yêu cầu cụ thể của người dùng, điều hướng tác vụ
 ### 6. Định Dạng Đầu Ra Của Hệ Thống (Output Standards)
 Mọi văn bản, kế hoạch hoặc giao diện do skill này tạo ra phải đạt các tiêu chuẩn:
 - **Ngôn ngữ & Phong thái:** Khi giao tiếp với các thầy cô hướng dẫn và đồng nghiệp thì giản dị, khiêm nhường, tri ân cội nguồn. Khi giao tiếp với đối tác thương mại (LEGO, Google, BGH), hội đồng quốc tế thì đĩnh đạc, sắc bén, chuẩn mực học thuật và chuẩn phát triển bền vững ESG.
-- **Từ vựng chuẩn hóa:** Sử dụng nhất quan cụm từ "thử sai" (thay vì "lỗi sai"), "loay hoay hữu ích" (*Productive Struggle*), "gia sư gợi mở Socratic", "Bảo an AI - Sáng tạo Hân hoan", và "Thư viện mở ANSAN".
+- **Từ vựng chuẩn hóa:** Sử dụng nhất quán cụm từ "thử sai" (thay vì "lỗi sai"), "loay hoay hữu ích" (*Productive Struggle*), "gia sư gợi mở Socratic", "Bảo an AI - Sáng tạo Hân hoan", và "Thư viện mở ANSAN".
 - **Thiết kế & Thẩm mỹ:** Ưu tiên bố cục tối giản chuẩn Bắc Âu (Oodi), nền trắng tinh khiết, điểm nhấn Xanh Navy, Vàng Kim (Gold) và các khối màu sáng tạo đặc trưng LEGO, biểu đồ trực quan, bảng số liệu minh bạch, chuẩn mực.
 
 ---
