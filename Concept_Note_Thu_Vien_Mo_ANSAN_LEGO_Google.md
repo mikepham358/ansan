@@ -26,7 +26,7 @@
 ### 1. TÓM TẮT DỰ ÁN (EXECUTIVE SUMMARY)
 Trong bối cảnh Trí tuệ Nhân tạo (AI) bùng nổ, thế hệ học sinh Việt Nam đang đứng trước ranh giới kép: nguy cơ **lạm dụng thụ động / gian lận thi cử**, rủi ro **xâm phạm dữ liệu định danh cá nhân (PII)**, hoặc ngược lại, bị **bỏ lại phía sau về năng lực công nghệ tương lai**. Dự án **"Thư viện Mở ANSAN: Bảo an AI – Sáng tạo Hân hoan"** tiên phong xây dựng mô hình không gian học tập công cộng thế hệ mới – hòa quyện triết lý **"Học qua Chơi" (*Learning Through Play*)** của LEGO, tầm nhìn **"Lớp học Tương lai" (*Future of the Classroom*)** của Google, và triết lý sư phạm bản địa **"Bảo an AI – Chu trình ĐƯỢC"**.
 
-Thư viện mở ANSAN không phải là kho chứa sách truyền thống, mà là **một trung tâm đổi mới sáng chế mở (Living Lab)** lấy cảm hứng từ Thư viện Trung tâm Oodi (Helsinki, Phần Lan). Tại đây, học sinh được bảo vệ trong một không gian số an toàn tuyệt đối (*Walled-Garden Zero-PII*), trải nghiệm sự *"loay hoay hữu ích"* (*Productive Struggle*) cùng gia sư gợi mở Socratic, và tự tay biến ý tưởng thành hiện thực thông qua lắp ráp LEGO STEAM kết hợp lập trình trực giác (*Vibe Coding*) trên nền tảng Google Gemini Canvas.
+Thư viện mở ANSAN không phải là kho chứa sách truyền thống, mà là **một trung tâm đổi mới sáng chế mở (Living Lab)** lấy cảm hứng từ Thư viện Trung tâm Oodi (Helsinki, Phần Lan). Tại đây, học sinh được bảo vệ trong một không gian số an toàn tuyệt đối (*Walled-Garden Zero-PII*), trải nghiệm sự **"thử sai tích cực"** (*Productive Trial & Error*) cùng gia sư gợi mở Socratic, và tự tay biến ý tưởng thành hiện thực thông qua lắp ráp LEGO STEAM kết hợp lập trình trực giác (*Vibe Coding*) trên nền tảng Google Gemini Canvas.
 
 ---
 
@@ -41,16 +41,16 @@ Thư viện mở ANSAN không phải là kho chứa sách truyền thống, mà 
 ### 3. TRIẾT LÝ SƯ PHẠM ĐỘT PHÁ: "CHU TRÌNH ĐƯỢC" & SOCRATIC AI
 Dự án vận hành trên khung ngữ pháp sư phạm **"Chu trình ĐƯỢC"** độc bản:
 - **ĐƯỢC + Động từ (Vùng An toàn & Trao quyền - *Learner Agency*):** Môi trường học tập khép kín an toàn (*Walled-Garden*), cam kết không thu thập dữ liệu định danh (Zero-PII). Người học **được** tự do khám phá, **được thử sai** mà không lo âu hay áp lực điểm số.
-- **Hành động & Loay hoay hữu ích (*Productive Struggle & Socratic PARTS*):** AI được tinh chỉnh theo khung câu lệnh PARTS để tuyệt đối **không đưa bài giải sẵn**. AI đóng vai người dẫn dắt Socratic, đặt câu hỏi gợi mở, buộc học sinh phải quan sát mô hình LEGO, suy ngẫm logic và phản biện nguồn tin (*Grounding*).
-- **Động từ + ĐƯỢC (Kết tinh Năng lực & Sáng tạo Hân hoan):** Trẻ vượt qua thử thách, làm **được** mô hình cơ khí LEGO SPIKE, kiến tạo **được** ứng dụng AI thông qua Vibe Coding trên Google Gemini, đạt đến trạng thái tự chủ số và niềm vui sáng tạo thuần khiết.
+- **Thử sai tích cực & Câu hỏi "Được chưa?" (*Productive Trial & Growth Mindset*):** AI được tinh chỉnh theo khung câu lệnh PARTS để tuyệt đối **không đưa bài giải sẵn**. AI đóng vai người dẫn dắt Socratic, đặt câu hỏi gợi mở, giúp học sinh luôn tự vấn: *"Đã ĐƯỢC chưa?"* để rèn luyện **Tư duy phát triển (*Growth Mindset* của Carol Dweck)**, kiên trì quan sát mô hình LEGO, suy ngẫm logic và phản biện nguồn tin (*Grounding*).
+- **Động từ + ĐƯỢC (Kết tinh Năng lực & Sáng tạo Hân hoan):** Trẻ vượt qua thử thách, làm **được** mô hình cơ khí LEGO SPIKE, kiến tạo **được** ứng dụng AI thông qua Vibe Coding trên Google Gemini, đạt đến trạng thái tự chủ số và niềm vui sáng tạo thuần khiết khi tự hào khẳng định: *"Chính em làm ĐƯỢC!"*.
 
 ```
 +----------------------------------------------------------------------------------------------------+
 |                                      CHU TRÌNH ĐƯỢC SƯ PHẠM                                         |
 |                                                                                                    |
-|    [ĐƯỢC BẢO AN & TRAO QUYỀN]      ===>      [LOAY HOAY HỮU ÍCH]      ===>      [SÁNG TẠO ĐƯỢC]      |
-|    - Walled-Garden Zero-PII                 - Socratic Dialogue                - Làm chủ LEGO STEAM|
-|    - Không gian Oodi cởi mở                 - Thử sai không phán xét           - Vibe Coding Gemini|
+|    [ĐƯỢC BẢO AN & TRAO QUYỀN]      ===>      [THỬ SAI TÍCH CỰC]       ===>      [SÁNG TẠO ĐƯỢC]      |
+|    - Walled-Garden Zero-PII                 - Câu hỏi "Được chưa?"             - Làm chủ LEGO STEAM|
+|    - Không gian Oodi cởi mở                 - Growth Mindset (Carol Dweck)     - Vibe Coding Gemini|
 |    - Tự do khám phá                         - Rèn tư duy phản biện             - Đạt niềm Hân Hoan |
 +----------------------------------------------------------------------------------------------------+
 ```

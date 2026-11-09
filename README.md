@@ -24,7 +24,7 @@ Trong bối cảnh Trí tuệ Nhân tạo bùng nổ, thế hệ học sinh Vi�
 
 **Thư viện Mở ANSAN (ANSAN Open Library)** là mô hình không gian học tập công cộng thế hệ mới – hòa quyện triết lý **"Học qua Chơi" (*Learning Through Play*)** của LEGO, tầm nhìn **"Lớp học Tương lai" (*Future of the Classroom*)** của Google for Education, và khung sư phạm bản địa **"Chu trình ĐƯỢC"**.
 
-Thư viện mở ANSAN tái hiện tinh thần Thư viện Trung tâm Oodi (Helsinki, Phần Lan) – nơi người học được bảo vệ trong một không gian số an toàn tuyệt đối (*Walled-Garden Zero-PII*), trải nghiệm sự *"loay hoay hữu ích"* (*Productive Struggle*) cùng gia sư gợi mở Socratic, và tự tay biến ý tưởng thành hiện thực thông qua lắp ráp LEGO STEAM kết hợp lập trình trực giác (*Vibe Coding*) trên Google Gemini Canvas.
+Thư viện mở ANSAN tái hiện tinh thần Thư viện Trung tâm Oodi (Helsinki, Phần Lan) – nơi người học được bảo vệ trong một không gian số an toàn tuyệt đối (*Walled-Garden Zero-PII*), trải nghiệm sự **"thử sai tích cực"** (*Productive Trial & Error*) cùng gia sư gợi mở Socratic, và tự tay biến ý tưởng thành hiện thực thông qua lắp ráp LEGO STEAM kết hợp lập trình trực giác (*Vibe Coding*) trên Google Gemini Canvas.
 
 ---
 
@@ -36,17 +36,17 @@ Dự án vận hành trên khung ngữ pháp sư phạm Chu trình ĐƯỢC 3 b�
 +---------------------------------------------------------------------------------------------------------+
 |                                    CHU TRÌNH ĐƯỢC SƯ PHẠM TOÀN DIỆN                                     |
 |                                                                                                         |
-|   1. ĐƯỢC + ĐỘNG TỪ            ===>       2. LOAY HOAY HỮU ÍCH          ===>      3. ĐỘNG TỪ + ĐƯỢC      |
-|   (Vùng An Toàn & Trao Quyền)             (Productive Struggle & PARTS)           (Năng Lực Tự Chủ Số)   |
+|   1. ĐƯỢC + ĐỘNG TỪ            ===>       2. THỬ SAI TÍCH CỰC           ===>      3. ĐỘNG TỪ + ĐƯỢC      |
+|   (Vùng An Toàn & Trao Quyền)             (Câu hỏi "Được chưa?" & Growth)         (Năng Lực Tự Chủ Số)   |
 |   • Môi trường Walled-Garden              • AI không giải bài hộ                  • Chế tác LEGO STEAM   |
 |   • Cam kết Zero-PII                      • Gia sư gợi mở Socratic                • Lập trình Vibe Coding|
-|   • Trao quyền "thử sai"                  • 100% tài liệu Grounding               • Tự vận hành dự án    |
+|   • Trao quyền "thử sai"                  • Rèn Growth Mindset (Carol Dweck)      • Tự vận hành dự án    |
 +---------------------------------------------------------------------------------------------------------+
 ```
 
 1. **ĐƯỢC + Động từ (Kiến tạo Vùng an toàn & Trao quyền - *Learner Agency*):** Môi trường khép kín an toàn (*Walled-Garden* trên Gemini NotebookLM/LearnLM) và cam kết Zero-PII. Người học **được** an toàn, **được** trao quyền, **được thử sai** (*Learning Through Play*) mà không sợ phán xét.
-2. **Hành động & Loay hoay hữu ích (*Productive Struggle & Socratic PARTS*):** Tuyệt đối **không để AI giải bài hộ hay đưa đáp án sẵn**. Khung câu lệnh PARTS giúp AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở, trích dẫn 100% tài liệu chính thống (*Grounding*), rèn luyện tư duy phản biện và kỹ năng săn lỗi ảo giác.
-3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học tự tay lắp ghép mô hình cơ khí LEGO SPIKE, kiến tạo **được** ứng dụng qua Vibe Coding trên Gemini Canvas, đạt niềm vui làm chủ công nghệ thực sự.
+2. **Thử sai tích cực & Câu hỏi "Được chưa?" (*Productive Trial & Growth Mindset*):** Tuyệt đối **không để AI giải bài hộ hay đưa đáp án sẵn**. Khung câu lệnh PARTS giúp AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở, giúp người học luôn tự vấn: *"Đã ĐƯỢC chưa?"* để rèn luyện **Tư duy phát triển (*Growth Mindset* của GS. Carol Dweck)**, kiên trì thử nghiệm, phát hiện lỗi ảo giác và chủ động tìm kiếm giải pháp tối ưu.
+3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học tự tay lắp ghép mô hình cơ khí LEGO SPIKE, kiến tạo **được** ứng dụng qua Vibe Coding trên Gemini Canvas, đạt niềm vui làm chủ công nghệ thực sự khi tự hào reo vang: *"Chính em đã làm ĐƯỢC!"*.
 
 ---
 

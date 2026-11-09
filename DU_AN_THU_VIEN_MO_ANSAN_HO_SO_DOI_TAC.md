@@ -79,8 +79,8 @@ Trân trọng,
         |                                 |                                 |
  [ỦY MỊ TƯ DUY & GIAN LẬN]       [XÂM PHẠM DỮ LIỆU ĐỊNH DANH]       [MẤT KẾT NỐI VẬT LÝ]
   AI đưa sẵn đáp án làm học sinh    Các nền tảng AI thương mại thu thập   Học sinh dán mắt vào màn hình,
-  mất năng lực "loay hoay hữu      dữ liệu cá nhân (PII), vi phạm        xa rời việc chế tác thực tế,
-  ích" và tư duy phản biện.         Nghị định 13 và Thông tư 18.         thiếu vắng niềm vui "chơi mà học".
+  mất năng lực "thử sai tích        dữ liệu cá nhân (PII), vi phạm        xa rời việc chế tác thực tế,
+  cực" và tư duy phản biện.         Nghị định 13 và Thông tư 18.         thiếu vắng niềm vui "chơi mà học".
 ```
 
 ### 3.1. Sự Đứt Gãy Giữa Công Nghệ Và Sư Phạm
@@ -105,11 +105,11 @@ Thư viện Mở ANSAN vận hành trên triết lý độc bản: **"Bảo an A
 +---------------------------------------------------------------------------------------------------------+
 |                                    CHU TRÌNH ĐƯỢC SƯ PHẠM BẢN ĐỊA                                       |
 |                                                                                                         |
-|   BƯỚC 1: ĐƯỢC + ĐỘNG TỪ         ===>    BƯỚC 2: LOAY HOAY HỮU ÍCH       ===>    BƯỚC 3: ĐỘNG TỪ + ĐƯỢC  |
-|   (Vùng An Toàn & Trao Quyền)            (Productive Struggle & PARTS)           (Năng Lực Tự Chủ Số)   |
+|   BƯỚC 1: ĐƯỢC + ĐỘNG TỪ         ===>    BƯỚC 2: THỬ SAI TÍCH CỰC        ===>    BƯỚC 3: ĐỘNG TỪ + ĐƯỢC  |
+|   (Vùng An Toàn & Trao Quyền)            (Câu hỏi "Được chưa?" & Growth)         (Năng Lực Tự Chủ Số)   |
 |   • Môi trường Walled-Garden             • AI không giải bài hộ                  • Chế tác LEGO STEAM   |
-|   • Cam kết Zero-PII                     • Gia sư Socratic đặt câu hỏi           • Lập trình Vibe Coding|
-|   • Trao quyền "thử sai"                 • 100% tài liệu Grounding               • Tự chủ dự án thực tế |
+|   • Cam kết Zero-PII                     • Gia sư Socratic gợi mở                • Lập trình Vibe Coding|
+|   • Trao quyền "thử sai"                 • Rèn Growth Mindset (Carol Dweck)      • Tự chủ dự án thực tế |
 +---------------------------------------------------------------------------------------------------------+
 ```
 
@@ -117,13 +117,14 @@ Thư viện Mở ANSAN vận hành trên triết lý độc bản: **"Bảo an A
 1. **Nhịp 1: ĐƯỢC + Động từ (Kiến tạo Vùng an toàn & Trao quyền - *Learner Agency*):**
    - Không gian số được bảo vệ khép kín (*Walled-Garden* trên Gemini NotebookLM/LearnLM).
    - Cam kết **Zero-PII**: Không lưu trữ bất kỳ thông tin nhận dạng cá nhân nào của học sinh.
-   - Trẻ **được** lắng nghe, **được** an toàn, **được quyền thử sai** mà không lo sợ bị đánh giá hay trừng phạt.
-2. **Nhịp 2: Hành động & Loay hoay hữu ích (*Productive Struggle & Socratic PARTS*):**
+   - Trẻ **được** lắng nghe, **được** an toàn, **được quyền thử sai** (*Learning Through Play*) mà không lo sợ bị đánh giá hay trừng phạt.
+2. **Nhịp 2: Thử sai tích cực & Câu hỏi "Được chưa?" (*Productive Trial & Growth Mindset*):**
    - Đây là trái tim sư phạm của dự án: AI tuyệt đối **không cung cấp đáp án sẵn**.
-   - Khung câu lệnh chuẩn hóa **PARTS** (Persona - Assignment - Resources - Tone - Structure) biến AI thành gia sư Socratic thông thái: chỉ khơi gợi vấn đề, chỉ ra mâu thuẫn trong lập luận của học sinh, buộc trẻ phải tự mình động não và tra cứu sách nguồn (*Grounding 100%*).
+   - Khung câu lệnh chuẩn hóa **PARTS** (Persona - Assignment - Resources - Tone - Structure) biến AI thành gia sư Socratic thông thái: chỉ khơi gợi vấn đề, chỉ ra mâu thuẫn trong lập luận của học sinh, giúp trẻ luôn chủ động đặt câu hỏi phản tư: *"Đã ĐƯỢC chưa?"*.
+   - Đây là sự thực hành sâu sắc của **Tư duy phát triển (*Growth Mindset* của GS. Carol Dweck)**: mỗi lần vấp váp hay thử nghiệm chưa thành công không phải là "kém cỏi" hay "thất bại", mà là đòn bẩy tự nhiên để não bộ mở rộng tư duy, kiên trì học hỏi và tra cứu sách nguồn chuẩn xác (*Grounding 100%*).
 3. **Nhịp 3: Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):**
-   - Trẻ chuyển hóa sự vất vả của quá trình suy nghĩ thành niềm tự hào: tự tay lắp ráp **được** mô hình cơ khí LEGO SPIKE, lập trình **được** ứng dụng AI thông qua *Vibe Coding* trên Google Gemini Canvas.
-   - Đây là sự "Hân hoan" (Joyful Creation) đích thực đến từ năng lực tự chủ (*Learner Agency*).
+   - Trẻ chuyển hóa quá trình thử nghiệm thành niềm tự hào: tự tay lắp ráp **được** mô hình cơ khí LEGO SPIKE, lập trình **được** ứng dụng AI thông qua *Vibe Coding* trên Google Gemini Canvas.
+   - Khi câu hỏi *"Được chưa?"* được trả lời bằng tiếng reo vang: *"Chính em làm ĐƯỢC!"*, đây là sự "Hân hoan" (Joyful Creation) đích thực đến từ năng lực tự chủ (*Learner Agency*).
 
 ---
 

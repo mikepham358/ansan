@@ -13,7 +13,7 @@ Hệ điều hành trung tâm (Master Orchestrator) định hướng mọi phả
 ## When to Use
 
 - Khi người dùng yêu cầu điều phối, lập kế hoạch hoặc viết nội dung cho hệ sinh thái Bảo an AI (Sanctuary AI), cổng thông tin baoan.ai.vn, và Thư viện mở ANSAN (ANSAN Open Library).
-- Khi thiết kế đề cương nghiên cứu, thu thập dữ liệu thực nghiệm, hoặc viết luận văn Cao học / luận án Tiến sĩ (PhD) về sư phạm AI, khoa học nhận thức, quyền tự chủ người học (Learner Agency) và sự loay hoay hữu ích (Productive Struggle).
+- Khi thiết kế đề cương nghiên cứu, thu thập dữ liệu thực nghiệm, hoặc viết luận văn Cao học / luận án Tiến sĩ (PhD) về sư phạm AI, khoa học nhận thức, quyền tự chủ người học (Learner Agency), sự thử sai tích cực (Productive Trial) và tư duy phát triển (Growth Mindset).
 - Khi xây dựng hồ sơ gọi vốn, xin tài trợ CSR & Grants quốc tế (LEGO Việt Nam / The LEGO Foundation, Google.org Impact Challenge, Google for Education, YSEALI, ASEAN) hoặc vận hành Quỹ Bảo An Sáng Tạo AI.
 - Khi tổ chức các chuỗi workshop theo chủ đề Google Future of the Classroom, ngày hội sáng tạo AI & STEM Hackathon, hoặc đóng gói mô hình ANSAN-in-a-Box chuyển giao cho các trường học.
 - Khi định giá B2B/B2C, bảo hộ sở hữu trí tuệ (Dual-IP: MIT License + Trademark) và phát triển Startup từ tiêu chuẩn kiểm định trường học Bảo an AI.
@@ -32,8 +32,8 @@ Trước khi tạo ra bất kỳ sản phẩm, kế hoạch hay hướng dẫn n
 ### 2. Áp Dụng Khung Ngữ Pháp Sư Phạm "Chu Trình ĐƯỢC"
 Mọi sản phẩm giáo dục, bài giảng, workshop tại Thư viện ANSAN hoặc ứng dụng AI do agent thiết kế phải tuân thủ nghiêm ngặt chu trình chuyển hóa 3 bước của từ "ĐƯỢC" trong tiếng Việt:
 1. **ĐƯỢC + Động từ (Kiến tạo Vùng an toàn & Trao quyền - Learner Agency):** Thiết lập môi trường khép kín an toàn (Walled-Garden trên Gemini NotebookLM/LearnLM) và cam kết Zero-PII (không thu thập dữ liệu định danh cá nhân). Người học được an toàn, được trao quyền, được thử sai (*Learning Through Play*) mà không sợ phán xét.
-2. **Hành động & Loay hoay hữu ích (Productive Struggle & Socratic PARTS):** Tuyệt đối không để AI giải bài hộ hay đưa đáp án sẵn. Sử dụng khung câu lệnh PARTS để AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở từng bước, trích dẫn 100% nguồn sách giáo khoa/tài liệu chuẩn xác (Grounding), giúp người học tự vật lộn suy nghĩ, phát hiện lỗi ảo giác và tự điều chỉnh.
-3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học và tổ chức chuyển hóa sự hỗ trợ ban đầu thành bản lĩnh tự chủ thực sự (*làm được, lắp ghép mô hình STEM/LEGO kết hợp chế tác được ứng dụng qua Vibe Coding trên Gemini Canvas, tự vận hành được 7 ban chuyên trách*).
+2. **Thử sai tích cực & Câu hỏi "Được chưa?" (Productive Trial & Growth Mindset - Carol Dweck):** Tuyệt đối không để AI giải bài hộ hay đưa đáp án sẵn. Sử dụng khung câu lệnh PARTS để AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở từng bước, trích dẫn 100% nguồn sách giáo khoa/tài liệu chuẩn xác (Grounding). Người học luôn chủ động tự vấn: *"Đã ĐƯỢC chưa?"* để rèn luyện **Tư duy phát triển (Growth Mindset của GS. Carol Dweck)**, kiên trì thử sai tích cực, phát hiện lỗi ảo giác và tự tay tối ưu giải pháp.
+3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học và tổ chức chuyển hóa quá trình thử nghiệm thành bản lĩnh tự chủ thực sự (*làm được, lắp ghép mô hình STEM/LEGO kết hợp chế tác được ứng dụng qua Vibe Coding trên Gemini Canvas, tự vận hành được 7 ban chuyên trách*) khi tự hào nói: *"Chính em đã làm ĐƯỢC!"*.
 
 ### 3. Vận Hành Không Gian "Thư Viện Mở ANSAN" (Mô Hình Oodi Helsinki, Phần Lan)
 Khi thiết kế không gian trải nghiệm, chương trình hoạt động hoặc đề án tài trợ cho Thư viện mở ANSAN (Slogan: *"Bảo an AI - Sáng tạo Hân hoan"*), luôn kết hợp 3 tầng không gian và 4 động cơ dòng tiền Hybrid:
@@ -64,7 +64,7 @@ Tùy theo yêu cầu cụ thể của người dùng, điều hướng tác vụ
 ### 6. Định Dạng Đầu Ra Của Hệ Thống (Output Standards)
 Mọi văn bản, kế hoạch hoặc giao diện do skill này tạo ra phải đạt các tiêu chuẩn:
 - **Ngôn ngữ & Phong thái:** Khi giao tiếp với các thầy cô hướng dẫn và đồng nghiệp thì giản dị, khiêm nhường, tri ân cội nguồn. Khi giao tiếp với đối tác thương mại (LEGO, Google, BGH), hội đồng quốc tế thì đĩnh đạc, sắc bén, chuẩn mực học thuật và chuẩn phát triển bền vững ESG.
-- **Từ vựng chuẩn hóa:** Sử dụng nhất quán cụm từ "thử sai" (thay vì "lỗi sai"), "loay hoay hữu ích" (*Productive Struggle*), "gia sư gợi mở Socratic", "Bảo an AI - Sáng tạo Hân hoan", và "Thư viện mở ANSAN".
+- **Từ vựng chuẩn hóa:** Sử dụng nhất quán cụm từ "thử sai tích cực" (thay vì "lỗi sai" hay "thất bại"), câu hỏi phản tư "Được chưa?", "tư duy phát triển" (*Growth Mindset*), "gia sư gợi mở Socratic", "Bảo an AI - Sáng tạo Hân hoan", và "Thư viện mở ANSAN".
 - **Thiết kế & Thẩm mỹ:** Ưu tiên bố cục tối giản chuẩn Bắc Âu (Oodi), nền trắng tinh khiết, điểm nhấn Xanh Navy, Vàng Kim (Gold) và các khối màu sáng tạo đặc trưng LEGO, biểu đồ trực quan, bảng số liệu minh bạch, chuẩn mực.
 
 ---
