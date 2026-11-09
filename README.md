@@ -99,12 +99,12 @@ git init
 git add .
 git commit -m "feat: Launch ANSAN Open Library model portal on ansan.pro"
 git branch -M main
-git remote add origin https://github.com/mikepham358/ansan-open-library.git
+git remote add origin https://github.com/mikepham358/ansan.git
 git push -u origin main
 ```
 
 ### Bước 2: Bật GitHub Pages
-1. Truy cập vào Repository trên GitHub: `https://github.com/mikepham358/ansan-open-library`
+1. Truy cập vào Repository trên GitHub: `https://github.com/mikepham358/ansan`
 2. Vào **Settings** $\rightarrow$ **Pages**
 3. Mục **Build and deployment**:
    - Source: **Deploy from a branch**
@@ -143,7 +143,7 @@ Sau 5–15 phút cập nhật DNS, website của bạn sẽ tự động chạy 
 * **Chủ nhiệm:** ThS. Phạm Bá Hồng Sơn (Viện trưởng Sáng lập)
 * **Email:** `contact@baoan.ai.vn` | `banthuky@ansan.edu.vn`
 * **Website:** [https://ansan.pro](https://ansan.pro) | [https://baoan.ai.vn](https://baoan.ai.vn)
-* **GitHub:** [https://github.com/mikepham358](https://github.com/mikepham358)
+* **GitHub Repository:** [https://github.com/mikepham358/ansan](https://github.com/mikepham358/ansan)
 
 ---
 *Copyright © 2026 Pham Ba Hong Son. Released under the MIT License.*
