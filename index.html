@@ -113,83 +113,100 @@
         }
 
         /* ============================================================
-           THIẾT KẾ LIỀN MẠCH SANG TRỌNG (LUXURY SEAMLESS GLASS NAV)
+           THIẾT KẾ NGUYÊN KHỐI HIỆU ỨNG GƯƠNG SANG TRỌNG (MONOLITHIC MIRROR DOCK)
         ============================================================ */
         
-        /* 1. Luminous Brand Top Micro-Line */
-        .brand-quad-line {
+        /* 1. Monolithic Floating Mirror Dock Container */
+        .monolith-mirror-dock {
+            position: relative;
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.94) 0%, 
+                rgba(248, 250, 252, 0.78) 45%, 
+                rgba(255, 255, 255, 0.90) 100%
+            );
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            outline: 1px solid rgba(203, 213, 225, 0.65);
+            box-shadow: 
+                inset 0 1.5px 2.5px 0 rgba(255, 255, 255, 1),
+                inset 0 -1.5px 2px 0 rgba(148, 163, 184, 0.12),
+                0 16px 40px -8px rgba(15, 23, 42, 0.08),
+                0 4px 12px -2px rgba(15, 23, 42, 0.03);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: visible;
+        }
+
+        /* Inlaid 4-Color Micro-Line across top edge */
+        .monolith-top-strip {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            right: 28px;
+            height: 2px;
+            border-radius: 9999px;
             background: linear-gradient(90deg, 
                 #4285F4 0%, #4285F4 25%, 
                 #EA4335 25%, #EA4335 50%, 
                 #FBBC05 50%, #FBBC05 75%, 
                 #34A853 75%, #34A853 100%);
-            height: 3px;
-            width: 100%;
+            opacity: 0.95;
+            pointer-events: none;
         }
 
-        /* 2. Seamless Header Ribbon */
-        .luxury-glass-header {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-            box-shadow: 0 4px 24px -2px rgba(15, 23, 42, 0.03);
+        /* 2. Prismatic Mirror Divider */
+        .monolith-mirror-divider {
+            width: 1px;
+            height: 26px;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(203, 213, 225, 0.85) 50%, 
+                transparent 100%
+            );
+            flex-shrink: 0;
         }
 
-        /* 3. Integrated Logo Mark */
-        .luxury-logo-link {
+        /* 3. Monolithic Menu Track (Seamless Dock Rail) */
+        .monolith-menu-track {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 6px 10px;
-            border-radius: 9999px;
-            text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .luxury-logo-link:hover {
-            background: rgba(241, 245, 249, 0.75);
-        }
-        .luxury-logo-img {
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .luxury-logo-link:hover .luxury-logo-img {
-            transform: scale(1.05);
-        }
-
-        /* 4. Unified Seamless Nav Track (Single Glass Island Dock) */
-        .luxury-nav-track {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            padding: 4px 5px;
-            border-radius: 9999px;
-            background: rgba(241, 245, 249, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            gap: 2.5px;
+            padding: 3.5px 5px;
+            background: rgba(241, 245, 249, 0.65);
             border: 1px solid rgba(226, 232, 240, 0.85);
-            box-shadow: 
-                inset 0 1px 2px rgba(15, 23, 42, 0.03),
-                0 2px 6px -1px rgba(15, 23, 42, 0.02);
+            border-radius: 9999px;
+            box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
         }
 
-        /* 5. Nav Item Segments within Track */
-        .luxury-nav-item {
+        /* 4. Monolithic Menu Tab */
+        .monolith-tab {
             position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 7px 14px;
+            gap: 6.5px;
+            padding: 7px 12px;
             border-radius: 9999px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             color: #475569;
             text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
             white-space: nowrap;
+            overflow: hidden;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
         }
 
-        .luxury-nav-item::after {
+        .monolith-tab-dot {
+            width: 6.5px;
+            height: 6.5px;
+            border-radius: 9999px;
+            flex-shrink: 0;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+
+        /* Specular Gleam Sweep */
+        .monolith-tab::after {
             content: '';
             position: absolute;
             top: -60%;
@@ -199,78 +216,56 @@
             background: linear-gradient(
                 105deg,
                 transparent 0%,
-                rgba(255, 255, 255, 0.7) 50%,
+                rgba(255, 255, 255, 0.88) 50%,
                 transparent 100%
             );
             transform: rotate(25deg);
-            transition: left 0.6s ease;
+            transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
             pointer-events: none;
         }
 
-        .luxury-nav-item:hover {
+        .monolith-tab:hover {
             color: #0F172A;
             background: #FFFFFF;
+            border-color: rgba(255, 255, 255, 1);
             box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 1),
-                0 3px 10px -1px rgba(15, 23, 42, 0.08);
+                inset 0 1px 1px #FFFFFF,
+                0 4px 12px -1px rgba(15, 23, 42, 0.08);
             transform: translateY(-1px);
         }
 
-        .luxury-nav-item:hover::after {
+        .monolith-tab:hover::after {
             left: 180%;
         }
 
-        /* 6. Action Button: GitHub Capsule */
-        .luxury-github-btn {
+        .monolith-tab:hover .monolith-tab-dot {
+            transform: scale(1.25);
+            filter: drop-shadow(0 0 5px currentColor);
+        }
+
+        /* 5. GitHub Pearl Mirror Button */
+        .monolith-btn-github {
+            position: relative;
+            overflow: hidden;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
+            gap: 6.5px;
+            padding: 8px 15px;
             border-radius: 9999px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             color: #334155;
             background: rgba(255, 255, 255, 0.95);
             border: 1px solid rgba(226, 232, 240, 0.95);
             box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 1),
+                inset 0 1px 1.5px #FFFFFF,
                 0 2px 6px -1px rgba(15, 23, 42, 0.04);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
+            white-space: nowrap;
         }
 
-        .luxury-github-btn:hover {
-            color: #0F172A;
-            background: #FFFFFF;
-            border-color: rgba(203, 213, 225, 1);
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 1),
-                0 6px 14px -2px rgba(15, 23, 42, 0.08);
-            transform: translateY(-1px);
-        }
-
-        /* 7. Action Button: Hợp Tác Đối Tác Luminous Capsule */
-        .luxury-cta-btn {
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 20px;
-            border-radius: 9999px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #FFFFFF;
-            background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 0.45),
-                0 4px 14px -1px rgba(66, 133, 244, 0.35);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            text-decoration: none;
-        }
-
-        .luxury-cta-btn::after {
+        .monolith-btn-github::after {
             content: '';
             position: absolute;
             top: -60%;
@@ -280,7 +275,61 @@
             background: linear-gradient(
                 105deg,
                 transparent 0%,
-                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0.85) 50%,
+                transparent 100%
+            );
+            transform: rotate(25deg);
+            transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .monolith-btn-github:hover {
+            color: #0F172A;
+            background: #FFFFFF;
+            border-color: rgba(203, 213, 225, 1);
+            box-shadow: 
+                inset 0 1px 1.5px #FFFFFF,
+                0 6px 14px -2px rgba(15, 23, 42, 0.09);
+            transform: translateY(-1px);
+        }
+
+        .monolith-btn-github:hover::after {
+            left: 180%;
+        }
+
+        /* 6. Sapphire Luminous Mirror CTA Button */
+        .monolith-btn-cta {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8.5px 18px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            box-shadow: 
+                inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
+                0 4px 16px -1px rgba(66, 133, 244, 0.42);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .monolith-btn-cta::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -130%;
+            width: 50%;
+            height: 220%;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.55) 50%,
                 transparent 100%
             );
             transform: rotate(25deg);
@@ -288,119 +337,158 @@
             pointer-events: none;
         }
 
-        .luxury-cta-btn:hover {
+        .monolith-btn-cta:hover {
             transform: translateY(-1.5px);
             box-shadow: 
-                inset 0 1px 1.5px rgba(255, 255, 255, 0.6),
-                0 8px 24px -2px rgba(66, 133, 244, 0.45);
+                inset 0 1.5px 2px rgba(255, 255, 255, 0.8),
+                0 8px 24px -2px rgba(66, 133, 244, 0.55);
         }
 
-        .luxury-cta-btn:hover::after {
+        .monolith-btn-cta:hover::after {
             left: 180%;
+        }
+
+        /* 7. Monolithic Mobile Dropdown Glass Panel */
+        .monolith-mobile-panel {
+            border-radius: 28px;
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.96) 0%, 
+                rgba(248, 250, 252, 0.92) 100%
+            );
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            outline: 1px solid rgba(203, 213, 225, 0.65);
+            box-shadow: 
+                inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+                0 20px 48px -8px rgba(15, 23, 42, 0.12);
         }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-google-blue selection:text-white">
 
-    <!-- Top Brand Micro-Line -->
-    <div class="brand-quad-line w-full sticky top-0 z-50"></div>
+    <!-- Monolithic Luxury Floating Mirror Header -->
+    <header class="sticky top-2 sm:top-3.5 z-50 px-2 sm:px-4 lg:px-6 w-full pointer-events-none transition-all duration-300">
+        <div class="max-w-[1360px] mx-auto pointer-events-auto">
+            <!-- Monolithic Unibody Bar -->
+            <div class="monolith-mirror-dock rounded-full h-[66px] sm:h-[72px] px-3 sm:px-4 flex items-center justify-between gap-2 lg:gap-3">
+                <!-- Top Inlaid Quad-Color Micro-Line -->
+                <div class="monolith-top-strip"></div>
 
-    <!-- Navigation Header (Seamless Luxury Glass) -->
-    <header class="sticky top-[3px] z-40 luxury-glass-header transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            <!-- Brand Logo (Seamless Luxury Integration) -->
-            <a href="#" class="luxury-logo-link group">
-                <img src="assets/logo.png" alt="ANSAN Logo" class="luxury-logo-img h-11 w-11 object-contain rounded-2xl shadow-sm border border-slate-100">
-                <div>
-                    <div class="font-black text-lg tracking-tight text-slate-900 flex items-center gap-1">
-                        <span>THƯ VIỆN MỞ</span>
-                        <span class="text-google-blue">A</span><span class="text-google-red">N</span><span class="text-google-yellow">S</span><span class="text-google-green">A</span><span class="text-google-blue">N</span>
+                <!-- 1. Brand Pod (Seamless Integration) -->
+                <a href="#" class="group flex items-center gap-2.5 sm:gap-3 py-1.5 px-1.5 sm:px-2 rounded-full transition-all flex-shrink-0">
+                    <div class="relative">
+                        <img src="assets/logo.png" alt="ANSAN Logo" 
+                             class="h-10 w-10 sm:h-11 sm:w-11 object-contain rounded-2xl p-0.5 bg-white shadow-sm border border-slate-200/90 transition-transform duration-300 group-hover:scale-105">
+                        <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-google-green border-2 border-white shadow-sm"></span>
                     </div>
-                    <div class="text-[9.5px] tracking-wider uppercase font-bold text-slate-500 flex items-center gap-1.5">
-                        <span>Bảo An AI</span>
-                        <span class="text-slate-300">•</span>
-                        <span>Sáng Tạo Hân Hoan</span>
+                    <div class="text-left">
+                        <div class="font-black text-[14px] sm:text-base tracking-tight text-slate-900 leading-tight flex items-center gap-1">
+                            <span>THƯ VIỆN MỞ</span>
+                            <span class="text-google-blue">A</span><span class="text-google-red">N</span><span class="text-google-yellow">S</span><span class="text-google-green">A</span><span class="text-google-blue">N</span>
+                        </div>
+                        <div class="text-[9px] sm:text-[9.5px] tracking-wider uppercase font-extrabold text-slate-500 flex items-center gap-1.5 mt-0.5">
+                            <span class="text-slate-700">Bảo An AI</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-600">Sáng Tạo Hân Hoan</span>
+                        </div>
                     </div>
-                </div>
-            </a>
-
-            <!-- Desktop Navigation Menu (Single Unified Seamless Glass Island Track) -->
-            <nav class="hidden xl:flex items-center">
-                <div class="luxury-nav-track">
-                    <a href="#triet-ly" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-google-blue"></span>
-                        <span>Chu Trình ĐƯỢC</span>
-                    </a>
-                    <a href="#oodi-model" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-lego-red"></span>
-                        <span>Không Gian 3 Tầng</span>
-                    </a>
-                    <a href="#interactive-demo" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-google-yellow"></span>
-                        <span>Demo Socratic AI</span>
-                    </a>
-                    <a href="#dong-tien" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-google-green"></span>
-                        <span>4 Động Cơ Tài Chính</span>
-                    </a>
-                    <a href="#doi-tac" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-lego-blue"></span>
-                        <span>LEGO & Google</span>
-                    </a>
-                    <a href="#open-source" class="luxury-nav-item">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                        <span>Kho Tài Nguyên</span>
-                    </a>
-                </div>
-            </nav>
-
-            <!-- Action Buttons (Capsule Luster) -->
-            <div class="hidden sm:flex items-center gap-2.5">
-                <a href="https://github.com/mikepham358/ansan" target="_blank" rel="noopener noreferrer" 
-                   class="luxury-github-btn">
-                    <i class="fa-brands fa-github text-sm"></i>
-                    <span>GitHub</span>
                 </a>
-                <a href="#lien-he" 
-                   class="luxury-cta-btn">
-                    <i class="fa-solid fa-handshake"></i>
-                    <span>Hợp Tác Đối Tác</span>
-                </a>
+
+                <!-- Optical Prism Divider 1 -->
+                <div class="hidden xl:block monolith-mirror-divider"></div>
+
+                <!-- 2. Seamless Segmented Menu Track -->
+                <nav class="hidden xl:flex items-center">
+                    <div class="monolith-menu-track">
+                        <a href="#triet-ly" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-blue"></span>
+                            <span>Chu Trình ĐƯỢC</span>
+                        </a>
+                        <a href="#oodi-model" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-lego-red"></span>
+                            <span>Không Gian 3 Tầng</span>
+                        </a>
+                        <a href="#interactive-demo" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-yellow"></span>
+                            <span>Demo Socratic AI</span>
+                        </a>
+                        <a href="#dong-tien" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-green"></span>
+                            <span>4 Động Cơ Tài Chính</span>
+                        </a>
+                        <a href="#doi-tac" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-lego-blue"></span>
+                            <span>LEGO & Google</span>
+                        </a>
+                        <a href="#open-source" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-amber-500"></span>
+                            <span>Kho Tài Nguyên</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Optical Prism Divider 2 -->
+                <div class="hidden xl:block monolith-mirror-divider"></div>
+
+                <!-- 3. Integrated Action Pods -->
+                <div class="hidden sm:flex items-center gap-2 flex-shrink-0">
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" rel="noopener noreferrer" 
+                       class="monolith-btn-github group">
+                        <i class="fa-brands fa-github text-sm text-slate-800 transition-transform group-hover:scale-110"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#lien-he" class="monolith-btn-cta group">
+                        <i class="fa-solid fa-handshake text-xs text-white/90"></i>
+                        <span>Hợp Tác Đối Tác</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <button id="mobile-menu-btn" 
+                        class="xl:hidden w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-700 border border-slate-200/90 shadow-sm transition-all focus:outline-none" 
+                        aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-base"></i>
+                </button>
             </div>
 
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" class="xl:hidden p-2.5 rounded-full bg-slate-100/80 hover:bg-slate-200/80 text-slate-700 transition" aria-label="Toggle menu">
-                <i class="fa-solid fa-bars text-lg"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Nav Menu (Seamless Glass Dropdown) -->
-        <div id="mobile-menu" class="hidden xl:hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-2xl px-5 pt-3 pb-6 space-y-2">
-            <a href="#triet-ly" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-google-blue mr-2"></span>Chu Trình ĐƯỢC
-            </a>
-            <a href="#oodi-model" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-lego-red mr-2"></span>Không Gian 3 Tầng Chuẩn Oodi
-            </a>
-            <a href="#interactive-demo" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-google-yellow mr-2"></span>Trải Nghiệm Gia Sư Socratic
-            </a>
-            <a href="#dong-tien" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-google-green mr-2"></span>4 Động Cơ Dòng Tiền
-            </a>
-            <a href="#doi-tac" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-lego-blue mr-2"></span>Hợp Tác LEGO & Google
-            </a>
-            <a href="#open-source" class="luxury-nav-item w-full flex items-center justify-start py-2.5 px-4 bg-slate-50/80 rounded-xl">
-                <span class="inline-block w-2 h-2 rounded-full bg-amber-500 mr-2"></span>Kho Tài Nguyên MIT
-            </a>
-            <div class="pt-3 flex flex-col gap-2">
-                <a href="https://github.com/mikepham358/ansan" target="_blank" class="luxury-github-btn justify-center py-2.5 w-full">
-                    <i class="fa-brands fa-github mr-1.5"></i> GitHub Repository
+            <!-- Mobile Dropdown Panel (Monolithic Glass Pod) -->
+            <div id="mobile-menu" class="hidden xl:hidden mt-2.5 p-4 sm:p-5 monolith-mobile-panel space-y-2">
+                <a href="#triet-ly" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-blue mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Chu Trình ĐƯỢC</span>
                 </a>
-                <a href="#lien-he" class="luxury-cta-btn justify-center py-2.5 w-full">
-                    <i class="fa-solid fa-handshake mr-1.5"></i> Đăng Ký Đối Tác
+                <a href="#oodi-model" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-lego-red mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Không Gian 3 Tầng Chuẩn Oodi</span>
                 </a>
+                <a href="#interactive-demo" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-yellow mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Demo Socratic AI</span>
+                </a>
+                <a href="#dong-tien" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-green mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">4 Động Cơ Dòng Tiền</span>
+                </a>
+                <a href="#doi-tac" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-lego-blue mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Hợp Tác LEGO & Google</span>
+                </a>
+                <a href="#open-source" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-amber-500 mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Kho Tài Nguyên MIT</span>
+                </a>
+                <div class="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" 
+                       class="monolith-btn-github justify-center py-2.5 w-full">
+                        <i class="fa-brands fa-github text-sm"></i> GitHub Repository
+                    </a>
+                    <a href="#lien-he" 
+                       class="monolith-btn-cta justify-center py-2.5 w-full">
+                        <i class="fa-solid fa-handshake text-xs"></i> Đăng Ký Đối Tác
+                    </a>
+                </div>
             </div>
         </div>
     </header>
