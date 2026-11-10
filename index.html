@@ -243,6 +243,28 @@
             filter: drop-shadow(0 0 5px currentColor);
         }
 
+        /* Language Switcher Pill */
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #1E293B;
+            background: #FFFFFF;
+            border: 1px solid rgba(203, 213, 225, 0.9);
+            box-shadow: inset 0 1px 1px #FFFFFF, 0 2px 4px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .lang-switch-btn:hover {
+            border-color: #4285F4;
+            color: #4285F4;
+            transform: translateY(-1px);
+        }
+
         /* 5. GitHub Pearl Mirror Button */
         .monolith-btn-github {
             position: relative;
@@ -432,8 +454,15 @@
                 <!-- Optical Prism Divider 2 -->
                 <div class="hidden xl:block monolith-mirror-divider"></div>
 
-                <!-- 3. Integrated Action Pods -->
+                <!-- 3. Integrated Action Pods & Language Switcher -->
                 <div class="hidden sm:flex items-center gap-2 flex-shrink-0">
+                    <!-- Language Switcher Pill -->
+                    <a href="en.html" class="lang-switch-btn" title="Switch to English version for YSEALI & International Grants">
+                        <span class="text-google-blue font-black">VI</span>
+                        <span class="text-slate-300">|</span>
+                        <span>🇺🇸 EN</span>
+                    </a>
+
                     <a href="https://github.com/mikepham358/ansan" target="_blank" rel="noopener noreferrer" 
                        class="monolith-btn-github group">
                         <i class="fa-brands fa-github text-sm text-slate-800 transition-transform group-hover:scale-110"></i>
@@ -455,6 +484,12 @@
 
             <!-- Mobile Dropdown Panel (Monolithic Glass Pod) -->
             <div id="mobile-menu" class="hidden xl:hidden mt-2.5 p-4 sm:p-5 monolith-mobile-panel space-y-2">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200/80 mb-2">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Ngôn ngữ / Language</span>
+                    <a href="en.html" class="lang-switch-btn">
+                        <span>🇺🇸 English Version (YSEALI) &rarr;</span>
+                    </a>
+                </div>
                 <a href="#triet-ly" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
                     <span class="monolith-tab-dot bg-google-blue mr-2"></span>
                     <span class="text-xs font-bold text-slate-800">Chu Trình ĐƯỢC</span>
@@ -1290,9 +1325,48 @@ while True:
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Doc 1: Core Research Paper (Featured) -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-google-red shadow-md hover:shadow-xl transition-all lego-top-red flex flex-col justify-between relative overflow-hidden group">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            <!-- Doc 1: YSEALI Seeds Grant Dossier (New Featured) -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-google-green shadow-md hover:shadow-xl transition-all lego-top-green flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-50 rounded-full blur-xl pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center text-2xl border border-emerald-100">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-emerald-100 text-google-green rounded-full uppercase tracking-wider">
+                            YSEALI Seeds 2026
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md uppercase">
+                        Hồ Sơ Đề Cử Quốc Tế
+                    </span>
+                    <h4 class="font-black text-base text-slate-900 mt-2 mb-1.5 leading-snug">
+                        Hồ Sơ YSEALI Seeds Grant Proposal
+                    </h4>
+                    <p class="text-[11px] font-semibold text-slate-500 mb-2">
+                        Chuẩn Bộ Ngoại giao Hoa Kỳ (U.S. Dept of State)<br>
+                        <span class="text-google-green font-mono text-[10px]">Track: Education & Civic Engagement</span>
+                    </p>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Toàn văn bộ hồ sơ tiếng Anh chuẩn 12 chương trình bày sáng kiến Living Lab Oodi, khung DUOC, ngân sách 15.000$ và kế hoạch lan tỏa ASEAN.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                    <a href="YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md" target="_blank" 
+                       class="w-full text-center text-xs font-bold text-white bg-google-green hover:bg-emerald-600 py-2.5 px-3 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Xem Bản Đề Cử YSEALI (MD)</span>
+                    </a>
+                    <a href="en.html" 
+                       class="text-center text-[11px] font-bold text-slate-600 hover:text-slate-900 transition-colors">
+                        Xem Cổng Tiếng Anh (en.html) &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doc 2: Core Research Paper (Featured) -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-google-red shadow-md hover:shadow-xl transition-all lego-top-red flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute -top-10 -right-10 w-24 h-24 bg-red-50 rounded-full blur-xl pointer-events-none"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -1304,9 +1378,9 @@ while True:
                         </span>
                     </div>
                     <span class="text-[10px] font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md uppercase">
-                        Paper 24 Trang • ORCID Verified
+                        Paper 24 Trang • ORCID
                     </span>
-                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-1.5 leading-snug">
+                    <h4 class="font-black text-base text-slate-900 mt-2 mb-1.5 leading-snug">
                         Hệ Hình Sư Phạm "ĐƯỢC" & Năng Lực Hiện Thân
                     </h4>
                     <p class="text-[11px] font-semibold text-slate-500 mb-2">
@@ -1323,15 +1397,11 @@ while True:
                         <i class="fa-solid fa-download"></i>
                         <span>Tải Toàn Văn PDF (1.6 MB)</span>
                     </a>
-                    <a href="assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf" target="_blank" 
-                       class="text-center text-[11px] font-bold text-slate-600 hover:text-slate-900 transition-colors">
-                        Đọc trực tuyến trên trình duyệt →
-                    </a>
                 </div>
             </div>
 
-            <!-- Doc 2: Partner Proposal -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-google-blue shadow-sm hover:shadow-md transition-all lego-top-blue flex flex-col justify-between">
+            <!-- Doc 3: Partner Proposal -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-google-blue shadow-sm hover:shadow-md transition-all lego-top-blue flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-12 h-12 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center text-2xl border border-blue-100">
@@ -1344,7 +1414,7 @@ while True:
                     <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-google-blue rounded-md uppercase border border-blue-200">
                         Hồ Sơ Hợp Tác
                     </span>
-                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2 leading-snug">
+                    <h4 class="font-black text-base text-slate-900 mt-2 mb-2 leading-snug">
                         Hồ Sơ Dự Án Đối Tác 10 Chương
                     </h4>
                     <p class="text-xs text-slate-600 mb-4 leading-relaxed">
@@ -1353,16 +1423,16 @@ while True:
                 </div>
                 <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
                     <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md" target="_blank" 
-                       class="text-xs font-bold text-google-blue hover:text-blue-700">Xem Bản MD</a>
+                       class="text-xs font-bold text-google-blue hover:text-blue-700">Xem MD</a>
                     <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx" download 
                        class="text-xs font-bold text-white bg-google-blue px-3 py-2 rounded-xl hover:bg-blue-600 shadow-sm transition-all flex items-center gap-1">
-                        <i class="fa-solid fa-download"></i> Tải DOCX
+                        <i class="fa-solid fa-download"></i> DOCX
                     </a>
                 </div>
             </div>
 
-            <!-- Doc 3: Concept Note -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow flex flex-col justify-between">
+            <!-- Doc 4: Concept Note -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl border border-amber-100">
@@ -1375,24 +1445,24 @@ while True:
                     <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-800 rounded-md uppercase border border-amber-200">
                         Concept Note 2 Trang
                     </span>
-                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2 leading-snug">
+                    <h4 class="font-black text-base text-slate-900 mt-2 mb-2 leading-snug">
                         Bản Concept Note Quốc Tế
                     </h4>
                     <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-                        Bản tóm tắt ý tưởng dự án chuẩn quốc tế gửi quỹ CSR của LEGO Việt Nam và Google for Education, xúc tích và định lượng rõ ràng.
+                        Bản tóm tắt ý tưởng dự án chuẩn quốc tế gửi quỹ CSR của LEGO Việt Nam và Google for Education.
                     </p>
                 </div>
                 <div class="pt-3 border-t border-slate-100">
                     <a href="Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md" target="_blank" 
                        class="text-xs font-bold text-amber-600 hover:text-amber-800 flex items-center justify-between py-1 transition-colors">
-                        <span>Đọc bản Markdown</span>
+                        <span>Đọc bản MD</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Doc 4: AI Skill Orchestrator -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green flex flex-col justify-between">
+            <!-- Doc 5: AI Skill Orchestrator -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center text-2xl border border-emerald-100">
@@ -1405,17 +1475,17 @@ while True:
                     <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-google-green rounded-md uppercase border border-emerald-200">
                         Antigravity Native
                     </span>
-                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2 leading-snug">
+                    <h4 class="font-black text-base text-slate-900 mt-2 mb-2 leading-snug">
                         Skill AI Điều Phối Trung Tâm
                     </h4>
                     <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-                        Mã nguồn skill <code class="bg-slate-100 px-1 py-0.5 rounded text-[11px] font-mono">ansan-bao-an-ai-orchestrator</code> tích hợp trực tiếp vào Google Antigravity & Claude.
+                        Mã nguồn skill <code class="bg-slate-100 px-1 py-0.5 rounded text-[11px] font-mono">ansan-bao-an-ai-orchestrator</code> tích hợp trong Google Antigravity & Claude.
                     </p>
                 </div>
                 <div class="pt-3 border-t border-slate-100">
                     <a href="ansan-bao-an-ai-orchestrator.md" target="_blank" 
                        class="text-xs font-bold text-google-green hover:text-green-700 flex items-center justify-between py-1 transition-colors">
-                        <span>Xem mã nguồn Skill</span>
+                        <span>Mã nguồn Skill</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>

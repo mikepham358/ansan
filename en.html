@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANSAN Open Library | Safe AI, Joyful Creation</title>
+    <meta name="description" content="ANSAN Open Library - A 3-Tier Living Lab inspired by Helsinki Central Library Oodi (Finland), combining Google for Education and LEGO Education STEAM. Grounded in the DUOC Embodied Competency Model.">
+    <meta name="keywords" content="ANSAN, ansan.pro, ANSAN Open Library, Safe AI, Joyful Creation, Oodi Helsinki, Google for Education, LEGO STEAM, DUOC Pedagogical Framework, YSEALI">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ANSAN Open Library | Safe AI, Joyful Creation">
+    <meta property="og:description" content="Living Lab inspired by Oodi Helsinki combining Google for Education and LEGO Education STEAM under the DUOC Framework.">
+    <meta property="og:url" content="https://ansan.pro/en.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/full-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        google: {
+                            blue: '#4285F4',
+                            red: '#EA4335',
+                            yellow: '#FBBC05',
+                            green: '#34A853'
+                        },
+                        lego: {
+                            red: '#E52521',
+                            yellow: '#FFD700',
+                            blue: '#006CB7',
+                            green: '#00853F',
+                            orange: '#F57D20'
+                        },
+                        ansan: {
+                            navy: '#0B192C',
+                            primary: '#1E3E62',
+                            slate: '#0F172A',
+                            border: '#E2E8F0',
+                            lightBg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'lego': '0 4px 0 0 rgba(0,0,0,0.06)',
+                        'lego-hover': '0 6px 0 0 rgba(0,0,0,0.08)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.02)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body { 
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: #FFFFFF; 
+            color: #0F172A; 
+            letter-spacing: -0.015em;
+        }
+        .font-serif-title, h1, h2, h3, h4, .font-display { 
+            font-family: 'Space Grotesk', sans-serif; 
+            letter-spacing: -0.03em;
+        }
+        .font-body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+        
+        .white-grid-bg {
+            background-color: #FFFFFF;
+            background-image: radial-gradient(#E2E8F0 1.2px, transparent 1.2px);
+            background-size: 28px 28px;
+        }
+
+        .lego-top-blue { border-top: 4px solid #4285F4; }
+        .lego-top-red { border-top: 4px solid #EA4335; }
+        .lego-top-yellow { border-top: 4px solid #FBBC05; }
+        .lego-top-green { border-top: 4px solid #34A853; }
+
+        .brick-tag {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .brick-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Monolithic Floating Mirror Dock Container */
+        .monolith-mirror-dock {
+            position: relative;
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.94) 0%, 
+                rgba(248, 250, 252, 0.78) 45%, 
+                rgba(255, 255, 255, 0.90) 100%
+            );
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            outline: 1px solid rgba(203, 213, 225, 0.65);
+            box-shadow: 
+                inset 0 1.5px 2.5px 0 rgba(255, 255, 255, 1),
+                inset 0 -1.5px 2px 0 rgba(148, 163, 184, 0.12),
+                0 16px 40px -8px rgba(15, 23, 42, 0.08),
+                0 4px 12px -2px rgba(15, 23, 42, 0.03);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: visible;
+        }
+
+        .monolith-top-strip {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            right: 28px;
+            height: 2px;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, 
+                #4285F4 0%, #4285F4 25%, 
+                #EA4335 25%, #EA4335 50%, 
+                #FBBC05 50%, #FBBC05 75%, 
+                #34A853 75%, #34A853 100%);
+            opacity: 0.95;
+            pointer-events: none;
+        }
+
+        .monolith-mirror-divider {
+            width: 1px;
+            height: 26px;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(203, 213, 225, 0.85) 50%, 
+                transparent 100%
+            );
+            flex-shrink: 0;
+        }
+
+        .monolith-menu-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 3.5px 5px;
+            background: rgba(241, 245, 249, 0.65);
+            border: 1px solid rgba(226, 232, 240, 0.85);
+            border-radius: 9999px;
+            box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
+        }
+
+        .monolith-tab {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6.5px 11px;
+            border-radius: 9999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #475569;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+        }
+
+        .monolith-tab-dot {
+            width: 6.5px;
+            height: 6.5px;
+            border-radius: 9999px;
+            flex-shrink: 0;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+
+        .monolith-tab::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -130%;
+            width: 50%;
+            height: 220%;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.88) 50%,
+                transparent 100%
+            );
+            transform: rotate(25deg);
+            transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .monolith-tab:hover {
+            color: #0F172A;
+            background: #FFFFFF;
+            border-color: rgba(255, 255, 255, 1);
+            box-shadow: 
+                inset 0 1px 1px #FFFFFF,
+                0 4px 12px -1px rgba(15, 23, 42, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .monolith-tab:hover::after {
+            left: 180%;
+        }
+
+        .monolith-tab:hover .monolith-tab-dot {
+            transform: scale(1.25);
+            filter: drop-shadow(0 0 5px currentColor);
+        }
+
+        /* Language Switcher Pill */
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #1E293B;
+            background: #FFFFFF;
+            border: 1px solid rgba(203, 213, 225, 0.9);
+            box-shadow: inset 0 1px 1px #FFFFFF, 0 2px 4px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .lang-switch-btn:hover {
+            border-color: #4285F4;
+            color: #4285F4;
+            transform: translateY(-1px);
+        }
+
+        /* GitHub Pearl Mirror Button */
+        .monolith-btn-github {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 9999px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #334155;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(226, 232, 240, 0.95);
+            box-shadow: inset 0 1px 1.5px #FFFFFF, 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .monolith-btn-github:hover {
+            color: #0F172A;
+            background: #FFFFFF;
+            border-color: rgba(203, 213, 225, 1);
+            box-shadow: inset 0 1px 1.5px #FFFFFF, 0 6px 14px -2px rgba(15, 23, 42, 0.09);
+            transform: translateY(-1px);
+        }
+
+        /* CTA Button */
+        .monolith-btn-cta {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 6.5px;
+            padding: 8.5px 17px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.65), 0 4px 16px -1px rgba(66, 133, 244, 0.42);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .monolith-btn-cta:hover {
+            transform: translateY(-1.5px);
+            box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.8), 0 8px 24px -2px rgba(66, 133, 244, 0.55);
+        }
+
+        .monolith-mobile-panel {
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.92) 100%);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            outline: 1px solid rgba(203, 213, 225, 0.65);
+            box-shadow: inset 0 1.5px 2px 0 rgba(255, 255, 255, 1), 0 20px 48px -8px rgba(15, 23, 42, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-google-blue selection:text-white">
+
+    <!-- Monolithic Luxury Floating Mirror Header -->
+    <header class="sticky top-2 sm:top-3.5 z-50 px-2 sm:px-4 lg:px-6 w-full pointer-events-none transition-all duration-300">
+        <div class="max-w-[1380px] mx-auto pointer-events-auto">
+            <!-- Monolithic Unibody Bar -->
+            <div class="monolith-mirror-dock rounded-full h-[66px] sm:h-[72px] px-3 sm:px-4 flex items-center justify-between gap-2 lg:gap-2.5">
+                <!-- Top Inlaid Quad-Color Micro-Line -->
+                <div class="monolith-top-strip"></div>
+
+                <!-- 1. Brand Pod -->
+                <a href="en.html" class="group flex items-center gap-2.5 sm:gap-3 py-1 px-1.5 rounded-full transition-all flex-shrink-0">
+                    <div class="relative">
+                        <img src="assets/logo.png" alt="ANSAN Logo" 
+                             class="h-10 w-10 sm:h-11 sm:w-11 object-contain rounded-2xl p-0.5 bg-white shadow-sm border border-slate-200/90 transition-transform duration-300 group-hover:scale-105">
+                        <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-google-green border-2 border-white shadow-sm"></span>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-black text-[14px] sm:text-base tracking-tight text-slate-900 leading-tight flex items-center gap-1">
+                            <span>ANSAN</span>
+                            <span class="text-google-blue font-serif-title">OPEN</span>
+                            <span class="text-google-red font-serif-title">LIBRARY</span>
+                        </div>
+                        <div class="text-[9px] sm:text-[9.5px] tracking-wider uppercase font-extrabold text-slate-500 flex items-center gap-1.5 mt-0.5">
+                            <span class="text-slate-700">Safe AI</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-600">Joyful Creation</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Optical Prism Divider 1 -->
+                <div class="hidden xl:block monolith-mirror-divider"></div>
+
+                <!-- 2. Seamless Segmented Menu Track -->
+                <nav class="hidden xl:flex items-center">
+                    <div class="monolith-menu-track">
+                        <a href="#philosophy" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-blue"></span>
+                            <span>DUOC Framework</span>
+                        </a>
+                        <a href="#oodi-model" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-lego-red"></span>
+                            <span>3-Tier Living Lab</span>
+                        </a>
+                        <a href="#interactive-demo" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-yellow"></span>
+                            <span>Socratic AI Demo</span>
+                        </a>
+                        <a href="#hybrid-finance" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-google-green"></span>
+                            <span>4 Cashflow Engines</span>
+                        </a>
+                        <a href="#partners" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-lego-blue"></span>
+                            <span>LEGO & Google</span>
+                        </a>
+                        <a href="#open-source" class="monolith-tab group">
+                            <span class="monolith-tab-dot bg-amber-500"></span>
+                            <span>YSEALI & Resources</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Optical Prism Divider 2 -->
+                <div class="hidden xl:block monolith-mirror-divider"></div>
+
+                <!-- 3. Integrated Action & Language Pods -->
+                <div class="hidden sm:flex items-center gap-2 flex-shrink-0">
+                    <!-- Language Switcher Pill -->
+                    <a href="index.html" class="lang-switch-btn" title="Chuyển sang tiếng Việt">
+                        <span>🇻🇳 VI</span>
+                        <span class="text-slate-300">|</span>
+                        <span class="text-google-blue font-black">EN</span>
+                    </a>
+
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" rel="noopener noreferrer" 
+                       class="monolith-btn-github group">
+                        <i class="fa-brands fa-github text-sm text-slate-800 transition-transform group-hover:scale-110"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#contact" class="monolith-btn-cta group">
+                        <i class="fa-solid fa-handshake text-xs text-white/90"></i>
+                        <span>Partner With Us</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <button id="mobile-menu-btn" 
+                        class="xl:hidden w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-700 border border-slate-200/90 shadow-sm transition-all focus:outline-none" 
+                        aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-base"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Dropdown Panel -->
+            <div id="mobile-menu" class="hidden xl:hidden mt-2.5 p-4 sm:p-5 monolith-mobile-panel space-y-2">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200/80 mb-2">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Select Language</span>
+                    <a href="index.html" class="lang-switch-btn">
+                        <span>🇻🇳 Tiếng Việt (VI)</span>
+                    </a>
+                </div>
+                <a href="#philosophy" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-blue mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">DUOC Pedagogical Framework</span>
+                </a>
+                <a href="#oodi-model" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-lego-red mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">3-Tier Oodi Living Lab</span>
+                </a>
+                <a href="#interactive-demo" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-yellow mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">Socratic AI Interactive Demo</span>
+                </a>
+                <a href="#hybrid-finance" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-google-green mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">4 Hybrid Cashflow Engines</span>
+                </a>
+                <a href="#partners" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-lego-blue mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">LEGO & Google Synergy</span>
+                </a>
+                <a href="#open-source" class="monolith-tab w-full flex items-center justify-start py-2.5 px-4 bg-white/80 rounded-2xl border border-slate-200/60 shadow-sm">
+                    <span class="monolith-tab-dot bg-amber-500 mr-2"></span>
+                    <span class="text-xs font-bold text-slate-800">YSEALI Dossier & Open Resources</span>
+                </a>
+                <div class="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" 
+                       class="monolith-btn-github justify-center py-2.5 w-full">
+                        <i class="fa-brands fa-github text-sm"></i> GitHub Repository
+                    </a>
+                    <a href="#contact" 
+                       class="monolith-btn-cta justify-center py-2.5 w-full">
+                        <i class="fa-solid fa-handshake text-xs"></i> Partner Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="white-grid-bg py-16 sm:py-24 border-b border-slate-100 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                
+                <!-- Partner Badges -->
+                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-8">
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 border border-blue-200 text-google-blue shadow-sm">
+                        <i class="fa-solid fa-landmark"></i> Oodi Helsinki Living Lab Standard
+                    </span>
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-red-50 border border-red-200 text-lego-red shadow-sm">
+                        <i class="fa-solid fa-shapes"></i> LEGO Education STEAM
+                    </span>
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-50 border border-amber-200 text-amber-800 shadow-sm">
+                        <i class="fa-brands fa-google text-google-yellow"></i> Google for Education
+                    </span>
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-50 border border-emerald-200 text-google-green shadow-sm">
+                        <i class="fa-solid fa-seedling"></i> YSEALI Seeds for the Future
+                    </span>
+                    <span class="brick-tag inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-purple-50 border border-purple-200 text-purple-700 shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i> Zero-PII Child Safety
+                    </span>
+                </div>
+
+                <!-- Main Hero Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 font-serif-title leading-tight">
+                    ANSAN OPEN <span class="text-google-blue">L</span><span class="text-google-red">I</span><span class="text-google-yellow">B</span><span class="text-google-green">R</span><span class="text-google-blue">A</span><span class="text-google-red">R</span><span class="text-google-yellow">Y</span>
+                </h1>
+
+                <!-- Secondary Subtitle -->
+                <div class="inline-block py-1.5 px-4 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm sm:text-lg mb-6 border border-slate-200">
+                    Safe AI &bull; Joyful Creation &bull; Oodi Helsinki Living Lab Standard
+                </div>
+
+                <!-- Value Proposition -->
+                <p class="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+                    A next-generation public living lab integrating <strong>LEGO's "Learning Through Play"</strong>, <strong>Google for Education's "Future of the Classroom"</strong>, and the scientific <strong>DUOC Embodied Competency Pedagogical Framework</strong>. Where children are wholly safeguarded to create joyfully.
+                </p>
+
+                <!-- CTA Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+                    <a href="#oodi-model" 
+                       class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-google-blue hover:bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Explore 3-Tier Living Lab</span>
+                    </a>
+                    <a href="YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md" target="_blank" 
+                       class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border-2 border-emerald-500 text-emerald-800 font-bold text-base shadow-sm hover:border-emerald-600 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-shield text-google-green"></i>
+                        <span>YSEALI Grant Dossier (MD)</span>
+                    </a>
+                    <a href="assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf" download 
+                       class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-slate-900 hover:bg-black text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-google-yellow"></i>
+                        <span>PhD Paper (PDF 24p)</span>
+                    </a>
+                </div>
+
+                <!-- 4 Highlight Metrics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-blue">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-google-blue">1,200+</span>
+                            <i class="fa-solid fa-users text-blue-300 text-lg"></i>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 uppercase tracking-wider">Students Empowered</div>
+                        <div class="text-[11px] text-slate-500 mt-1">Directly trained in Socratic AI & LEGO STEAM</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-red">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-lego-red">300+</span>
+                            <i class="fa-solid fa-chalkboard-user text-red-300 text-lg"></i>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 uppercase tracking-wider">Educators Trained</div>
+                        <div class="text-[11px] text-slate-500 mt-1">Certified in AI Governance & Child Safety</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-yellow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-amber-500">50+</span>
+                            <i class="fa-solid fa-cubes text-amber-300 text-lg"></i>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 uppercase tracking-wider">Youth Prototypes</div>
+                        <div class="text-[11px] text-slate-500 mt-1">Working AI & STEAM community solutions</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-card lego-top-green">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-2xl sm:text-3xl font-black text-google-green">100%</span>
+                            <i class="fa-solid fa-shield-halved text-emerald-300 text-lg"></i>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 uppercase tracking-wider">Zero-PII Walled Garden</div>
+                        <div class="text-[11px] text-slate-500 mt-1">Strict child data privacy & UNESCO ethics</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: DUOC PEDAGOGICAL FRAMEWORK & SCIENTIFIC PILLARS -->
+    <section id="philosophy" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-google-blue border border-blue-200 uppercase tracking-wider mb-3">
+                Core Academic Theoretical Foundation
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                The DUOC Embodied Competency Model
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Resolving historical Cartesian Dualism in Western instructional design through 5 interdisciplinary scientific pillars and a 5-phase generative inquiry cycle.
+            </p>
+            <div class="mt-4 flex items-center justify-center gap-2 text-xs font-semibold text-slate-500">
+                <span>Principal Researcher: <strong>Pham Ba Hong Son, MSc.</strong></span>
+                <span>&bull;</span>
+                <span class="font-mono text-google-blue">ORCID: 0009-0006-5607-1686</span>
+            </div>
+        </div>
+
+        <!-- 5 Interdisciplinary Scientific Streams -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-blue">
+                <span class="text-xs font-black text-google-blue">01. Cognitive Linguistics</span>
+                <h4 class="font-black text-sm text-slate-900 mt-2 mb-1">Pre/Post Verb Structure</h4>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Pre-verbal "ĐƯỢC + V" (Entitlement, Assimilation) bridges into Post-verbal "V + ĐƯỢC" (Verified Competency, Accommodation).
+                </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-red">
+                <span class="text-xs font-black text-lego-red">02. Enactive Cognition</span>
+                <h4 class="font-black text-sm text-slate-900 mt-2 mb-1">Varela's Embodiment</h4>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Knowledge is not abstract data; it emerges through physical sensorimotor fabrication with LEGO bricks and code.
+                </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow">
+                <span class="text-xs font-black text-amber-600">03. Free Energy Principle</span>
+                <h4 class="font-black text-sm text-slate-900 mt-2 mb-1">Karl Friston's Bayes</h4>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    The brain minimizes prediction errors via active inference. Never give pre-baked answers to preserve neural plasticity.
+                </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green">
+                <span class="text-xs font-black text-google-green">04. Gut-Brain Axis</span>
+                <h4 class="font-black text-sm text-slate-900 mt-2 mb-1">Serotonin & Serenity</h4>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Oxytocin (Safety & Trust) &rarr; Dopamine (Curiosity) &rarr; Serotonin (90-95% in gut, inner calm and sovereignty).
+                </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-blue">
+                <span class="text-xs font-black text-google-blue">05. Growth Mindset</span>
+                <h4 class="font-black text-sm text-slate-900 mt-2 mb-1">Bjork & Carol Dweck</h4>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Desirable difficulties and productive trial-and-error anchored by the central question: "Am I truly done yet?".
+                </p>
+            </div>
+        </div>
+
+        <!-- 5-Phase Pedagogical Architecture -->
+        <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">The 5-Phase Generative Inquiry Cycle</h3>
+                <p class="text-xs sm:text-sm text-slate-600">From initial Bayesian prediction to self-actualized embodied competence.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-full bg-blue-100 text-google-blue flex items-center justify-center font-black mb-3">1</div>
+                        <h5 class="font-black text-sm text-slate-900 mb-1">PREDICTION</h5>
+                        <div class="text-[10px] font-bold text-google-blue uppercase mb-2">ZPD & Bayesian Brain</div>
+                        <p class="text-[11px] text-slate-600">Students form hypotheses, generating constructive prediction error.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-full bg-red-100 text-lego-red flex items-center justify-center font-black mb-3">2</div>
+                        <h5 class="font-black text-sm text-slate-900 mb-1">DESIGN</h5>
+                        <div class="text-[10px] font-bold text-lego-red uppercase mb-2">Socratic Scaffolding</div>
+                        <p class="text-[11px] text-slate-600">Teachers & AI frame intentional friction and desirable difficulties.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-full bg-amber-100 text-amber-600 flex items-center justify-center font-black mb-3">3</div>
+                        <h5 class="font-black text-sm text-slate-900 mb-1">INHERITANCE</h5>
+                        <div class="text-[10px] font-bold text-amber-600 uppercase mb-2">ĐƯỢC + V &bull; Oxytocin</div>
+                        <p class="text-[11px] text-slate-600">A safe zero-PII space where youth are entitled to explore without fear.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-full bg-emerald-100 text-google-green flex items-center justify-center font-black mb-3">4</div>
+                        <h5 class="font-black text-sm text-slate-900 mb-1">EXECUTION</h5>
+                        <div class="text-[10px] font-bold text-google-green uppercase mb-2">V + ĐƯỢC &bull; Dopamine</div>
+                        <p class="text-[11px] text-slate-600">Hands-on creation with LEGO SPIKE & Vibe Coding on Gemini Canvas.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-google-blue shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center font-black mb-3">5</div>
+                        <h5 class="font-black text-sm text-slate-900 mb-1">METACOGNITION</h5>
+                        <div class="text-[10px] font-bold text-google-blue uppercase mb-2">"Am I Done Yet?"</div>
+                        <p class="text-[11px] text-slate-600">Self-reflection stabilizes Serotonin, culminating in deep self-worth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mindmap diagram link -->
+            <div class="mt-8 text-center">
+                <a href="assets/paper_figures/page_15_5.jpg" target="_blank" 
+                   class="inline-flex items-center gap-2 text-xs font-bold text-google-blue hover:text-blue-700 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>View Master Mindmap Diagram (PhD Research Paper Figure 5) &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: 3-TIER LIVING LAB (OODI HELSINKI) -->
+    <section id="oodi-model" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50/70 rounded-3xl border border-slate-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-lego-red border border-red-200 uppercase tracking-wider mb-3">
+                Spatial Living Lab Blueprint
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                3 Tiers Inspired by Oodi Helsinki
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Transforming the quiet public library into a dynamic civic living lab for technological democracy, hands-on fabrication, and digital well-being.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Tier 1 -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card lego-top-red flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-lego-red flex items-center justify-center text-xl font-black mb-6">T1</div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-red-50 text-lego-red rounded-md uppercase">Ground Floor &bull; Dynamic</span>
+                    <h3 class="text-xl font-black text-slate-900 mt-3 mb-3">Open Hackathon Arena</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Flexible 80–120 capacity maker space equipped with modular workbenches and rapid prototyping tools. Where youth, parents, and mentors co-design civic solutions.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-700 font-semibold mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-lego-red"></i> Bi-weekly AI & LEGO STEAM Hackathons</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-lego-red"></i> Smart city & environmental hardware rigs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-lego-red"></i> Youth-led civic pitch showcases</li>
+                    </ul>
+                </div>
+                <div class="pt-4 border-t border-slate-100 text-xs font-bold text-lego-red flex items-center justify-between">
+                    <span>Maker Space Standard</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card lego-top-blue flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center text-xl font-black mb-6">T2</div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-google-blue rounded-md uppercase">Second Floor &bull; Collaborative</span>
+                    <h3 class="text-xl font-black text-slate-900 mt-3 mb-3">Future of Classroom Studio</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        A modern Google Reference School-standard media lab. Operationalizing the "Students-Teaching-Students & Teachers" model with Chromebook clusters.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-700 font-semibold mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-blue"></i> 4 workshop tracks on Google Classroom trends</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-blue"></i> Vibe Coding on Google Gemini Canvas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-blue"></i> UNESCO AI Competency Framework alignment</li>
+                    </ul>
+                </div>
+                <div class="pt-4 border-t border-slate-100 text-xs font-bold text-google-blue flex items-center justify-between">
+                    <span>Google Lab Standard</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-card lego-top-green flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center text-xl font-black mb-6">T3</div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-google-green rounded-md uppercase">Third Floor &bull; Silent Focus</span>
+                    <h3 class="text-xl font-black text-slate-900 mt-3 mb-3">The Sanctuary Oasis</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Scandinavian timber acoustics, biophilic greenery, and natural daylight. Dedicated to deep contemplative study, digital detox, and critical source verification.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-700 font-semibold mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Deep study with grounded NotebookLM</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Socratic inquiry & reflection logbooks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Restorative attention & digital well-being</li>
+                    </ul>
+                </div>
+                <div class="pt-4 border-t border-slate-100 text-xs font-bold text-google-green flex items-center justify-between">
+                    <span>Oodi Helsinki Standard</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SOCRATIC AI VS LAZY AI DEMO -->
+    <section id="interactive-demo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider mb-3">
+                Live Interactive Comparison
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                Socratic AI vs. "Lazy" Commercial AI
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                See firsthand how the PARTS prompt framework stimulates productive struggle rather than serving pre-cooked homework answers.
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-card overflow-hidden">
+            <!-- Tabs -->
+            <div class="flex border-b border-slate-200 bg-slate-50 p-2 gap-2">
+                <button id="tab-good" onclick="showDemo('good')" 
+                        class="flex-1 py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-white text-slate-900 shadow-sm border border-slate-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-google-green"></span>
+                    <span>ANSAN Socratic Tutor (Productive Friction)</span>
+                </button>
+                <button id="tab-bad" onclick="showDemo('bad')" 
+                        class="flex-1 py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900">
+                    <span class="w-2.5 h-2.5 rounded-full bg-google-red"></span>
+                    <span>Generic AI (Cognitive Atrophy)</span>
+                </button>
+            </div>
+
+            <!-- Content Good -->
+            <div id="demo-good" class="p-6 sm:p-8 space-y-4">
+                <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-100">
+                    <div class="text-[11px] font-bold text-google-blue uppercase mb-1">Student Inquiry:</div>
+                    <div class="text-sm text-slate-800 font-medium">"My LEGO automated smart garbage bin motor won't spin when the ultrasound sensor detects a hand. Tell me what to code to fix it."</div>
+                </div>
+                <div class="bg-emerald-50/60 p-5 rounded-2xl border border-emerald-100">
+                    <div class="flex items-center gap-2 text-[11px] font-bold text-google-green uppercase mb-2">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>ANSAN Socratic AI (Grounded Prompt):</span>
+                    </div>
+                    <div class="text-sm text-slate-800 leading-relaxed space-y-2">
+                        <p>Hello young engineer! Let's troubleshoot like a scientist:</p>
+                        <ol class="list-decimal list-inside space-y-1 text-xs sm:text-sm text-slate-700 pl-1">
+                            <li>When you bring your hand within 10 cm, does the ultrasound sensor LED indicator blink?</li>
+                            <li>In your Canvas code, what threshold value did you set for the distance condition? Is it in centimeters or inches?</li>
+                            <li>If the condition is met, what power percentage is commanded to Motor Port A? Have you verified the wire connection?</li>
+                        </ol>
+                        <p class="text-xs font-semibold text-google-green pt-2">&rarr; Test step 1 first. What does the sensor display on your screen?</p>
+                    </div>
+                </div>
+                <div class="text-[11px] text-slate-500 italic text-center">
+                    Outcome: The student investigates sensor data, debugs physical wiring, and experiences the authentic joy of discovery ("I figured it out!").
+                </div>
+            </div>
+
+            <!-- Content Bad -->
+            <div id="demo-bad" class="hidden p-6 sm:p-8 space-y-4">
+                <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-100">
+                    <div class="text-[11px] font-bold text-google-blue uppercase mb-1">Student Inquiry:</div>
+                    <div class="text-sm text-slate-800 font-medium">"My LEGO automated smart garbage bin motor won't spin when the ultrasound sensor detects a hand. Tell me what to code to fix it."</div>
+                </div>
+                <div class="bg-red-50/60 p-5 rounded-2xl border border-red-100">
+                    <div class="flex items-center gap-2 text-[11px] font-bold text-lego-red uppercase mb-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Generic Commercial AI:</span>
+                    </div>
+                    <div class="text-sm text-slate-800 leading-relaxed font-mono text-xs bg-white p-3 rounded-xl border border-red-200">
+                        // Copy and paste this code:<br>
+                        from spike import Motor, DistanceSensor<br>
+                        motor = Motor('A')<br>
+                        sensor = DistanceSensor('B')<br>
+                        while True:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if sensor.get_distance_cm() &lt; 10:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motor.run_for_degrees(90)
+                    </div>
+                </div>
+                <div class="text-[11px] text-slate-500 italic text-center text-lego-red font-semibold">
+                    Warning: The student blindly pastes the code without understanding threshold logic or port mapping. Neural restructuring is bypassed.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: 4 HYBRID CASHFLOW ENGINES -->
+    <section id="hybrid-finance" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50/70 rounded-3xl border border-slate-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-google-green border border-emerald-200 uppercase tracking-wider mb-3">
+                Financial Sustainability
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                4 Hybrid Cashflow Engines
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Operating as a Hybrid Social Enterprise: free community access anchored by competitive, self-sustaining revenue streams.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-blue">
+                <div class="w-10 h-10 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center font-black mb-4">1</div>
+                <h4 class="font-black text-base text-slate-900 mb-2">Anchor CSR Grants</h4>
+                <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                    Catalytic grant agreements from LEGO Foundation, Google.org, and YSEALI Seeds. 15-20% reserved for continuous R&D.
+                </p>
+                <div class="text-[11px] font-bold text-google-blue">Catalytic Seed Model</div>
+            </div>
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-red">
+                <div class="w-10 h-10 rounded-2xl bg-red-50 text-lego-red flex items-center justify-center font-black mb-4">2</div>
+                <h4 class="font-black text-base text-slate-900 mb-2">B2B / B2C Masterclasses</h4>
+                <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                    Executive training for school boards ($1,200-$3,000/cohort) and weekend youth STEAM innovation camps.
+                </p>
+                <div class="text-[11px] font-bold text-lego-red">Predictable Recurring Revenue</div>
+            </div>
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow">
+                <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-black mb-4">3</div>
+                <h4 class="font-black text-base text-slate-900 mb-2">Turnkey Hackathons</h4>
+                <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                    Transferring the complete 6-stage blueprint (BP-01 to BP-06) for private schools and municipal corporate events ($2,000-$6,000/event).
+                </p>
+                <div class="text-[11px] font-bold text-amber-600">Event Licensing & Operations</div>
+            </div>
+            <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-green">
+                <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center font-black mb-4">4</div>
+                <h4 class="font-black text-base text-slate-900 mb-2">"ANSAN-in-a-Box" & Audit</h4>
+                <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                    Replicable micro-library kit with annual accreditation based on 65% Socratic Safety + 35% Problem-Solving impact.
+                </p>
+                <div class="text-[11px] font-bold text-google-green">SaaS & Accreditation Standard</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: STRATEGIC PARTNERS (LEGO & GOOGLE) -->
+    <section id="partners" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-google-blue border border-blue-200 uppercase tracking-wider mb-3">
+                Strategic Global Synergy
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                LEGO Education & Google for Education
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Bridging physical tactile engineering with ethical, safe artificial intelligence.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-card lego-top-red">
+                <div class="w-14 h-14 rounded-2xl bg-red-50 text-lego-red flex items-center justify-center text-2xl font-black mb-6">
+                    <i class="fa-solid fa-shapes"></i>
+                </div>
+                <span class="text-xs font-bold text-lego-red uppercase tracking-wider">Tactile Engineering</span>
+                <h3 class="text-2xl font-black text-slate-900 mt-2 mb-4">LEGO Education & Learning Through Play</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                    Grounded in the physical manufacturing excellence of the carbon-neutral Binh Duong mega-factory. Children construct tangible prototypes, learning structural mechanics and spatial reasoning before writing a single line of code.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-bold">
+                    <span class="px-3 py-1 bg-red-50 text-lego-red rounded-lg">LEGO SPIKE Prime</span>
+                    <span class="px-3 py-1 bg-red-50 text-lego-red rounded-lg">Tactile Sensorimotor</span>
+                    <span class="px-3 py-1 bg-red-50 text-lego-red rounded-lg">Child Safety Policy</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-card lego-top-blue">
+                <div class="w-14 h-14 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center text-2xl font-black mb-6">
+                    <i class="fa-brands fa-google"></i>
+                </div>
+                <span class="text-xs font-bold text-google-blue uppercase tracking-wider">Ethical AI & Cloud</span>
+                <h3 class="text-2xl font-black text-slate-900 mt-2 mb-4">Google for Education & Future of Classroom</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                    Chromebook stations running Google Gemini Canvas for intuitive Vibe Coding, paired with NotebookLM for deep citation-backed research. Zero advertisements and strictly verified student data boundaries.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-bold">
+                    <span class="px-3 py-1 bg-blue-50 text-google-blue rounded-lg">Gemini Canvas Vibe Coding</span>
+                    <span class="px-3 py-1 bg-blue-50 text-google-blue rounded-lg">NotebookLM Socratic</span>
+                    <span class="px-3 py-1 bg-blue-50 text-google-blue rounded-lg">Google Reference School</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: OPEN SOURCE RESOURCES & YSEALI APPLICATION -->
+    <section id="open-source" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50/70 rounded-3xl border border-slate-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-google-green border border-emerald-200 uppercase tracking-wider mb-3">
+                Open Access & Grant Applications
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-serif-title text-slate-900 mb-4">
+                Academic Papers & YSEALI Dossiers
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+                Under the Dual-IP strategy, our scientific models, grant proposals, and AI skill orchestrators are released under the MIT Open Source License.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Doc 1: YSEALI Grant Dossier -->
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-google-green shadow-md hover:shadow-xl transition-all lego-top-green flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-google-green flex items-center justify-center text-2xl border border-emerald-100">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-emerald-100 text-google-green rounded-full uppercase tracking-wider">
+                            YSEALI Seeds 2026
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md uppercase">
+                        Grant Application Dossier
+                    </span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-1.5 leading-snug">
+                        YSEALI Seeds for the Future Proposal
+                    </h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Complete 12-section project dossier formatted for the U.S. State Department & Cultural Vistas YSEALI Seeds Grant program.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                    <a href="YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md" target="_blank" 
+                       class="w-full text-center text-xs font-bold text-white bg-google-green hover:bg-emerald-600 py-2.5 px-3 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Read YSEALI Proposal (MD)</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doc 2: PhD Academic Paper -->
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-google-red shadow-md hover:shadow-xl transition-all lego-top-red flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 text-google-red flex items-center justify-center text-2xl border border-red-100">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-red-100 text-google-red rounded-full uppercase tracking-wider">
+                            Core Research
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md uppercase">
+                        24p Paper &bull; ORCID Verified
+                    </span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-1.5 leading-snug">
+                        The DUOC Embodied Competency Model
+                    </h4>
+                    <p class="text-[11px] font-semibold text-slate-500 mb-2">
+                        Author: Pham Ba Hong Son, MSc.<br>
+                        <span class="font-mono text-[10px] text-google-blue">ORCID: 0009-0006-5607-1686</span>
+                    </p>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Full treatise resolving Cartesian dualism in Western pedagogy via 5 interdisciplinary scientific pillars.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                    <a href="assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf" download 
+                       class="w-full text-center text-xs font-bold text-white bg-google-red hover:bg-red-600 py-2.5 px-3 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download PDF (1.6 MB)</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doc 3: Partner Proposal DOCX -->
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-google-blue shadow-sm hover:shadow-md transition-all lego-top-blue flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-google-blue flex items-center justify-center text-2xl border border-blue-100">
+                            <i class="fa-regular fa-file-word"></i>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-blue-100 text-google-blue rounded-full uppercase tracking-wider">
+                            Proposal DOCX
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-google-blue rounded-md uppercase border border-blue-200">
+                        10-Chapter Master
+                    </span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2 leading-snug">
+                        Strategic Partnership Master Proposal
+                    </h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Comprehensive 10-chapter strategic partnership dossier designed for school boards and corporate CSR executives.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md" target="_blank" 
+                       class="text-xs font-bold text-google-blue hover:text-blue-700">View MD</a>
+                    <a href="DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx" download 
+                       class="text-xs font-bold text-white bg-google-blue px-3 py-2 rounded-xl hover:bg-blue-600 shadow-sm transition-all flex items-center gap-1">
+                        <i class="fa-solid fa-download"></i> DOCX
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doc 4: AI Skill Native Orchestrator -->
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all lego-top-yellow flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl border border-amber-100">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full uppercase tracking-wider">
+                            AI Native Skill
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-800 rounded-md uppercase border border-amber-200">
+                        Antigravity Native
+                    </span>
+                    <h4 class="font-black text-lg text-slate-900 mt-2 mb-2 leading-snug">
+                        Master AI Orchestrator Skill
+                    </h4>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Open-source AI agent system prompt and YAML configuration powering the Bảo An AI ecosystem on Google Antigravity.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-100">
+                    <a href="ansan-bao-an-ai-orchestrator.md" target="_blank" 
+                       class="text-xs font-bold text-amber-600 hover:text-amber-800 flex items-center justify-between py-1 transition-colors">
+                        <span>Inspect Agent Skill</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CHILD DIGITAL SAFETY & LEGAL COMPLIANCE -->
+    <section id="child-safety" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto bg-white">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-card lego-top-green">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 rounded-3xl bg-emerald-50 border border-emerald-200 text-google-green flex items-center justify-center text-3xl flex-shrink-0">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Comprehensive Child Digital Safety & Compliance</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        ANSAN Open Library complies with the highest national educational circulars and international child protection standards:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 font-semibold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> UNESCO AI Competency Framework for Students & Teachers.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> The LEGO Group Global Digital Child Safety Policy.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Zero-PII Walled-Garden: No biometric or identifiable data stored.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-google-green"></i> Vietnam MOET Circular 18/2023/TT-BGDDT & Official Dispatch 2422.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="bg-slate-50 border-t border-slate-200 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start justify-between gap-10 pb-12 border-b border-slate-200">
+                <div class="max-w-md">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/logo.png" alt="ANSAN Logo" class="h-10 w-10 object-contain rounded-2xl bg-white p-0.5 border border-slate-200">
+                        <div class="font-black text-xl text-slate-900">
+                            ANSAN OPEN LIBRARY
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Living Lab inspired by Oodi Helsinki (Finland) combining Google for Education and LEGO Education STEAM. Dedicated to safe AI, autonomous learning agency, and joyful creation across ASEAN.
+                    </p>
+                    <div class="text-xs text-slate-500 space-y-1">
+                        <div><strong>Official Domain:</strong> <a href="https://ansan.pro" class="text-google-blue font-bold hover:underline">ansan.pro</a></div>
+                        <div><strong>Ecosystem Hub:</strong> <a href="https://baoan.ai.vn" class="text-google-green font-bold hover:underline">baoan.ai.vn</a></div>
+                        <div><strong>Direct Inquiries:</strong> <span class="font-mono text-slate-700">contact@baoan.ai.vn</span> &bull; <span class="font-mono text-slate-700">banthuky@ansan.edu.vn</span></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-8 text-xs font-bold text-slate-600">
+                    <a href="#philosophy" class="hover:text-slate-900 transition">DUOC Framework</a>
+                    <a href="#oodi-model" class="hover:text-slate-900 transition">3-Tier Oodi</a>
+                    <a href="#interactive-demo" class="hover:text-slate-900 transition">Socratic Demo</a>
+                    <a href="#hybrid-finance" class="hover:text-slate-900 transition">Cashflow</a>
+                    <a href="YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md" target="_blank" class="text-google-green hover:underline">YSEALI Seeds</a>
+                    <a href="https://github.com/mikepham358/ansan" target="_blank" class="hover:text-slate-900 transition"><i class="fa-brands fa-github text-base"></i> GitHub</a>
+                    <a href="LICENSE" target="_blank" class="hover:text-slate-900 transition"><i class="fa-solid fa-scale-balanced text-base text-lego-red"></i> MIT License</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>
+                    Copyright &copy; 2026 <strong>Pham Ba Hong Son, MSc.</strong> (Founder, ANSAN Open Library &amp; B&#7843;o An AI Ecosystem).
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-google-green"></span>
+                    <span>Endorsed by Google for Education Directory &bull; Aligned with YSEALI Seeds for the Future.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Socratic Demo Toggle
+        function showDemo(type) {
+            const badDemo = document.getElementById('demo-bad');
+            const goodDemo = document.getElementById('demo-good');
+            const badTab = document.getElementById('tab-bad');
+            const goodTab = document.getElementById('tab-good');
+
+            if (type === 'good') {
+                badDemo.classList.add('hidden');
+                goodDemo.classList.remove('hidden');
+
+                goodTab.classList.add('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+                goodTab.classList.remove('text-slate-600');
+
+                badTab.classList.remove('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+                badTab.classList.add('text-slate-600');
+            } else {
+                goodDemo.classList.add('hidden');
+                badDemo.classList.remove('hidden');
+
+                badTab.classList.add('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+                badTab.classList.remove('text-slate-600');
+
+                goodTab.classList.remove('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+                goodTab.classList.add('text-slate-600');
+            }
+        }
+    </script>
+</body>
+</html>

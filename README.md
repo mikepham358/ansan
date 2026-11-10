@@ -11,6 +11,8 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?logo=github)](https://ansan.pro)
 [![Domain](https://img.shields.io/badge/Custom%20Domain-ansan.pro-blue)](https://ansan.pro)
+[![English Portal](https://img.shields.io/badge/Portal-English%20Version-4285F4)](https://ansan.pro/en.html)
+[![YSEALI Seeds](https://img.shields.io/badge/Grant-YSEALI%20Seeds%202026-10B981)](./YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--5607--1686-A6CE39?logo=orcid)](https://orcid.org/0009-0006-5607-1686)
 [![Research Paper](https://img.shields.io/badge/Research%20Paper-H%E1%BB%87%20H%C3%ACnh%20%C4%90%C6%AF%E1%BB%A2C-EA4335?logo=googlescholar)](./assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-amber.svg)](./LICENSE)
@@ -123,8 +125,10 @@ Thư viện ANSAN áp dụng mô hình kinh tế **Doanh nghiệp Xã hội Lai 
 
 | Tên Tệp | Định Dạng | Mô Tả Tệp |
 | :--- | :---: | :--- |
+| [`YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md`](./YSEALI_GRANT_APPLICATION_ANSAN_OPEN_LIBRARY.md) | **Markdown Grant (12 Chương)** | **Hồ Sơ Đề Cử Dự Án YSEALI Seeds for the Future (Tiếng Anh chuẩn Bộ Ngoại giao Hoa Kỳ).** |
 | [`Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf`](./assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf) | **PDF Academic (24 trang)** | **Công trình nghiên cứu khoa học cốt lõi: Hệ hình Sư phạm ĐƯỢC & Năng lực Hiện thân (ThS. Phạm Bá Hồng Sơn).** |
-| [`index.html`](./index.html) | Web Portal | Cổng giao diện trực tuyến chính thức của Thư viện Mở ANSAN chạy trên tên miền `ansan.pro`. |
+| [`en.html`](./en.html) | Web Portal (English) | Cổng giao diện trực tuyến phiên bản Tiếng Anh chuẩn quốc tế phục vụ hội đồng YSEALI & đối tác toàn cầu. |
+| [`index.html`](./index.html) | Web Portal (Vietnamese) | Cổng giao diện trực tuyến chính thức của Thư viện Mở ANSAN chạy trên tên miền `ansan.pro`. |
 | [`Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md`](./Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md) | Markdown | Bản Concept Note 2 trang chuẩn quốc tế gửi Quỹ CSR của LEGO Việt Nam và Google for Education. |
 | [`DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md`](./DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md) | Markdown | Hồ Sơ Dự Án Hợp Tác Đối Tác hoàn chỉnh (10 chương) cho Trường học & Doanh nghiệp. |
 | [`DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx`](./DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx) | Word DOCX | File định dạng Microsoft Word hoàn chỉnh có thể in ấn và trình ký đối tác. |
