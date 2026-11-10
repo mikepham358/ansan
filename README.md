@@ -3,7 +3,7 @@
 **Mô hình Living Lab chuẩn Oodi Helsinki (Phần Lan) kết hợp Google for Education & LEGO Education STEAM**
 
 🌐 **Website chính thức:** [https://ansan.pro](https://ansan.pro) | [https://baoan.ai.vn](https://baoan.ai.vn)  
-👤 **Chủ nhiệm & Tác giả:** ThS. Phạm Bá Hồng Sơn ([Hồ sơ Chuyên gia Google Directory](https://edudirectory.withgoogle.com))  
+👤 **Chủ nhiệm & Tác giả:** ThS. NCS. Phạm Bá Hồng Sơn ([ORCID: 0009-0006-5607-1686](https://orcid.org/0009-0006-5607-1686) • [Google Directory](https://edudirectory.withgoogle.com))  
 📜 **Giấy phép:** [MIT License (Mã nguồn mở)](./LICENSE)  
 🏢 **Tổ chức sáng lập:** Hệ sinh thái Nghiên cứu & Kiểm định Bảo An AI™  
 
@@ -11,6 +11,8 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-success?logo=github)](https://ansan.pro)
 [![Domain](https://img.shields.io/badge/Custom%20Domain-ansan.pro-blue)](https://ansan.pro)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--5607--1686-A6CE39?logo=orcid)](https://orcid.org/0009-0006-5607-1686)
+[![Research Paper](https://img.shields.io/badge/Research%20Paper-H%E1%BB%87%20H%C3%ACnh%20%C4%90%C6%AF%E1%BB%A2C-EA4335?logo=googlescholar)](./assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-amber.svg)](./LICENSE)
 [![Google for Education](https://img.shields.io/badge/Partner-Google%20for%20Education-4285F4?logo=google)](https://edu.google.com)
 [![LEGO Education](https://img.shields.io/badge/STEAM-LEGO%20Education-D11013?logo=lego)](https://education.lego.com)
@@ -18,35 +20,77 @@
 
 ---
 
+## 📚 TRÍCH DẪN HỌC THUẬT (ACADEMIC CITATION - APA 7)
+
+Toàn bộ nền tảng triết lý và kiến trúc vận hành của Thư viện Mở ANSAN được kế thừa trực tiếp từ công trình nghiên cứu khoa học của tác giả:
+
+> **Pham, B. H. S. (2026).** *A Gap in Learning Theories and Teaching Models: Proposing a New Indigenous and Competency-Based Teaching Model* [Hệ hình Sư phạm ĐƯỢC: Mô hình Dạy học Phát triển Năng lực Hiện thân]. Graduate School of Education, Ho Chi Minh City Open University. ORCID: [0009-0006-5607-1686](https://orcid.org/0009-0006-5607-1686).  
+> 📄 **Toàn văn bài báo (24 trang PDF):** [`assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf`](./assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf)
+
+---
+
 ## 📌 1. TỔNG QUAN DỰ ÁN
 
 Trong bối cảnh Trí tuệ Nhân tạo bùng nổ, thế hệ học sinh Việt Nam đang đối mặt với bài toán kép: **nguy cơ ủy mị tư duy do lệ thuộc vào đáp án ăn sẵn**, và **rủi ro rò rỉ dữ liệu cá nhân (PII)**.
 
-**Thư viện Mở ANSAN (ANSAN Open Library)** là mô hình không gian học tập công cộng thế hệ mới – hòa quyện triết lý **"Học qua Chơi" (*Learning Through Play*)** của LEGO, tầm nhìn **"Lớp học Tương lai" (*Future of the Classroom*)** của Google for Education, và khung sư phạm bản địa **"Chu trình ĐƯỢC"**.
+**Thư viện Mở ANSAN (ANSAN Open Library)** là mô hình không gian học tập công cộng thế hệ mới – hòa quyện triết lý **"Học qua Chơi" (*Learning Through Play*)** của LEGO, tầm nhìn **"Lớp học Tương lai" (*Future of the Classroom*)** của Google for Education, và khung sư phạm bản địa **"Hệ hình Sư phạm ĐƯỢC"**.
 
 Thư viện mở ANSAN tái hiện tinh thần Thư viện Trung tâm Oodi (Helsinki, Phần Lan) – nơi người học được bảo vệ trong một không gian số an toàn tuyệt đối (*Walled-Garden Zero-PII*), trải nghiệm sự **"thử sai tích cực"** (*Productive Trial & Error*) cùng gia sư gợi mở Socratic, và tự tay biến ý tưởng thành hiện thực thông qua lắp ráp LEGO STEAM kết hợp lập trình trực giác (*Vibe Coding*) trên Google Gemini Canvas.
 
 ---
 
-## 🧭 2. TRIẾT LÝ SƯ PHẠM BẢN ĐỊA: "CHU TRÌNH ĐƯỢC"
+## 🧭 2. NỀN TẢNG KHOA HỌC & HỆ HÌNH SƯ PHẠM "ĐƯỢC"
 
-Dự án vận hành trên khung ngữ pháp sư phạm Chu trình ĐƯỢC 3 bước độc bản:
+Khác biệt với các mô hình dạy học nhập ngoại vốn bắt rễ từ triết học nhị nguyên Descartes (*Cartesian Dualism* - tách rời trí não khỏi thân thể vật lý), **Hệ hình Sư phạm ĐƯỢC** giải quyết triệt để lỗ hổng này thông qua việc tích hợp **5 dòng chảy khoa học liên ngành hiện đại**:
 
 ```
 +---------------------------------------------------------------------------------------------------------+
-|                                    CHU TRÌNH ĐƯỢC SƯ PHẠM TOÀN DIỆN                                     |
+|                                    5 DÒNG CHẢY KHOA HỌC LIÊN NGÀNH CỐT LÕI                              |
 |                                                                                                         |
-|   1. ĐƯỢC + ĐỘNG TỪ            ===>       2. THỬ SAI TÍCH CỰC           ===>      3. ĐỘNG TỪ + ĐƯỢC      |
-|   (Vùng An Toàn & Trao Quyền)             (Câu hỏi "Được chưa?" & Growth)         (Năng Lực Tự Chủ Số)   |
-|   • Môi trường Walled-Garden              • AI không giải bài hộ                  • Chế tác LEGO STEAM   |
-|   • Cam kết Zero-PII                      • Gia sư gợi mở Socratic                • Lập trình Vibe Coding|
-|   • Trao quyền "thử sai"                  • Rèn Growth Mindset (Carol Dweck)      • Tự vận hành dự án    |
+|  1. NGÔN NGỮ HỌC TRI NHẬN BẢN ĐỊA: Cấu trúc tiền/hậu động từ "ĐƯỢC" (Thụ hưởng <--> Năng lực tự chủ)   |
+|  2. NHẬN THỨC HIỆN THÂN (Embodied/Enactive Cognition - Varela): Tri thức nổi lên từ thao tác tay chạm    |
+|  3. NGUYÊN LÝ NĂNG LƯỢNG TỰ DO & NÃO BỘ BAYES (Karl Friston): Tối thiểu sai số qua "Thử sai tích cực"   |
+|  4. TRỤC NÃO - RUỘT & TÂM THỂ "ĐƯỢC LÒNG": Biến thiên Oxytocin (Mở lòng) -> Dopamine -> Serotonin        |
+|  5. KHÓ KHĂN MONG MUỐN & TƯ DUY PHÁT TRIỂN (Bjork & Carol Dweck): Siêu nhận thức qua trạm "Được chưa?"  |
 +---------------------------------------------------------------------------------------------------------+
 ```
 
-1. **ĐƯỢC + Động từ (Kiến tạo Vùng an toàn & Trao quyền - *Learner Agency*):** Môi trường khép kín an toàn (*Walled-Garden* trên Gemini NotebookLM/LearnLM) và cam kết Zero-PII. Người học **được** an toàn, **được** trao quyền, **được thử sai** (*Learning Through Play*) mà không sợ phán xét.
-2. **Thử sai tích cực & Câu hỏi "Được chưa?" (*Productive Trial & Growth Mindset*):** Tuyệt đối **không để AI giải bài hộ hay đưa đáp án sẵn**. Khung câu lệnh PARTS giúp AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở, giúp người học luôn tự vấn: *"Đã ĐƯỢC chưa?"* để rèn luyện **Tư duy phát triển (*Growth Mindset* của GS. Carol Dweck)**, kiên trì thử nghiệm, phát hiện lỗi ảo giác và chủ động tìm kiếm giải pháp tối ưu.
-3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học tự tay lắp ghép mô hình cơ khí LEGO SPIKE, kiến tạo **được** ứng dụng qua Vibe Coding trên Gemini Canvas, đạt niềm vui làm chủ công nghệ thực sự khi tự hào reo vang: *"Chính em đã làm ĐƯỢC!"*.
+### 🔁 Chu Trình 5 Pha Sư Phạm Hiện Thân
+
+Từ nền tảng trên, Hệ hình ĐƯỢC được vận hành qua chu trình 5 pha kiến tạo:
+
+1. **Pha 1: DỰ ĐOÁN (Prediction):** Dựa trên Vùng phát triển gần nhất (ZPD của Vygotsky) và Não bộ dự đoán (Predictive Brain). Người học thiết lập kỳ vọng ban đầu, tạo ra "sai số dự đoán" kích hoạt tò mò tự nhiên.
+2. **Pha 2: THIẾT KẾ (Design):** Người thầy và hệ thống AI thiết kế giàn giáo sư phạm Socratic (*Scaffolding*), chủ động cài cắm các "khó khăn mong muốn" (*Desirable Difficulties* của Bjork) để khơi mở tư duy phát triển (*Growth Mindset*).
+3. **Pha 3: THỪA HƯỞNG (Inheritance - `ĐƯỢC + V`):** Nhịp thụ hưởng an toàn. Người học được trao quyền, được chu cấp nguồn lực, giải phóng hormone **Oxytocin** (mở lòng, an tâm, tin tưởng) mà không sợ hãi phán xét.
+4. **Pha 4: THỰC THI (Execution - `V + ĐƯỢC`):** Thao tác vật lý hiện thân cùng gạch LEGO SPIKE, Terrarium và mã lệnh Vibe Coding trên Google Gemini Canvas. Não bộ sản sinh **Dopamine** duy trì động lực khám phá và chuyển hóa thành năng lực thực chứng.
+5. **Pha 5: VÒNG LẶP PHẢN HỒI SIÊU NHẬN THỨC "ĐƯỢC CHƯA?" (Central Metacognitive Loop):** Người học tự soi chiếu, điều chỉnh sai số. Khi đạt kết quả tối ưu, cơ thể giải phóng **Serotonin** (90-95% từ vi hệ đường ruột), đưa tâm trí về trạng thái bình an, vững chãi – đạt đỉnh cao **"Được lòng chính mình" (Self-Actualization)**.
+
+```
+                  +---------------------------------------------------------+
+                  |         PHA 1: DỰ ĐOÁN (Prediction - ZPD & Bayes)       |
+                  +----------------------------+----------------------------+
+                                               |
+                                               v
+                  +---------------------------------------------------------+
+                  |     PHA 2: THIẾT KẾ (Design - Socratic & Desirable Diff)|
+                  +----------------------------+----------------------------+
+                                               |
+                                               v
+                  +---------------------------------------------------------+
+                  |     PHA 3: THỪA HƯỞNG (Inheritance - ĐƯỢC + V - Oxytocin|
+                  +----------------------------+----------------------------+
+                                               |
+                                               v
+                  +---------------------------------------------------------+
+                  |     PHA 4: THỰC THI (Execution - V + ĐƯỢC - Dopamine)   |
+                  +----------------------------+----------------------------+
+                                               |
+                                               v
+                 +===========================================================+
+                 | PHA 5: TRẠM SIÊU NHẬN THỨC "ĐƯỢC CHƯA?" (Metacognition)   |
+                 |         --> "ĐƯỢC LÒNG" & TỰ CHỦ HIỆN THÂN (Serotonin)    |
+                 +===========================================================+
+```
 
 ---
 
@@ -79,10 +123,13 @@ Thư viện ANSAN áp dụng mô hình kinh tế **Doanh nghiệp Xã hội Lai 
 
 | Tên Tệp | Định Dạng | Mô Tả Tệp |
 | :--- | :---: | :--- |
+| [`Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf`](./assets/docs/Nghien_cuu_Khoa_hoc_He_hinh_Su_pham_DUOC_Pham_Ba_Hong_Son.pdf) | **PDF Academic (24 trang)** | **Công trình nghiên cứu khoa học cốt lõi: Hệ hình Sư phạm ĐƯỢC & Năng lực Hiện thân (ThS. Phạm Bá Hồng Sơn).** |
 | [`index.html`](./index.html) | Web Portal | Cổng giao diện trực tuyến chính thức của Thư viện Mở ANSAN chạy trên tên miền `ansan.pro`. |
 | [`Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md`](./Concept_Note_Thu_Vien_Mo_ANSAN_LEGO_Google.md) | Markdown | Bản Concept Note 2 trang chuẩn quốc tế gửi Quỹ CSR của LEGO Việt Nam và Google for Education. |
 | [`DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md`](./DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.md) | Markdown | Hồ Sơ Dự Án Hợp Tác Đối Tác hoàn chỉnh (10 chương) cho Trường học & Doanh nghiệp. |
+| [`DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx`](./DU_AN_THU_VIEN_MO_ANSAN_HO_SO_DOI_TAC.docx) | Word DOCX | File định dạng Microsoft Word hoàn chỉnh có thể in ấn và trình ký đối tác. |
 | [`ansan-bao-an-ai-orchestrator.md`](./ansan-bao-an-ai-orchestrator.md) | Skill YAML | Đặc tả cấu hình Skill Master Orchestrator tích hợp trực tiếp trong Google Antigravity. |
+| [`assets/paper_figures/`](./assets/paper_figures/) | Graphics | Hệ thống 5 sơ đồ khoa học trích xuất từ bài báo (Hình 1 đến Hình 5). |
 | [`CNAME`](./CNAME) | Config | Tệp cấu hình tên miền tùy chỉnh `ansan.pro` cho GitHub Pages. |
 | [`LICENSE`](./LICENSE) | Legal | Giấy phép mã nguồn mở MIT License ghi nhận bản quyền tác giả. |
 

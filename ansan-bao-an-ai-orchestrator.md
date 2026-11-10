@@ -29,11 +29,20 @@ Trước khi tạo ra bất kỳ sản phẩm, kế hoạch hay hướng dẫn n
 - **Bên ngoài (Năng lực Tự chủ – Để giá trị thực tự lan tỏa):** 
   Chủ động làm chủ công cụ và công nghệ AI thay vì bị lệ thuộc vào đáp án làm sẵn. Xây dựng các sản phẩm thực tế, bài học cụ thể và không gian tri thức mở (Thư viện mở ANSAN, kho học liệu số MIT, hồ sơ năng lực chính danh) hoạt động như những ngọn hải đăng tự nhiên thu hút đối tác, nguồn lực và cộng đồng đồng hành bền vững.
 
-### 2. Áp Dụng Khung Ngữ Pháp Sư Phạm "Chu Trình ĐƯỢC"
-Mọi sản phẩm giáo dục, bài giảng, workshop tại Thư viện ANSAN hoặc ứng dụng AI do agent thiết kế phải tuân thủ nghiêm ngặt chu trình chuyển hóa 3 bước của từ "ĐƯỢC" trong tiếng Việt:
-1. **ĐƯỢC + Động từ (Kiến tạo Vùng an toàn & Trao quyền - Learner Agency):** Thiết lập môi trường khép kín an toàn (Walled-Garden trên Gemini NotebookLM/LearnLM) và cam kết Zero-PII (không thu thập dữ liệu định danh cá nhân). Người học được an toàn, được trao quyền, được thử sai (*Learning Through Play*) mà không sợ phán xét.
-2. **Thử sai tích cực & Câu hỏi "Được chưa?" (Productive Trial & Growth Mindset - Carol Dweck):** Tuyệt đối không để AI giải bài hộ hay đưa đáp án sẵn. Sử dụng khung câu lệnh PARTS để AI đóng vai gia sư Socratic: chỉ đặt câu hỏi gợi mở từng bước, trích dẫn 100% nguồn sách giáo khoa/tài liệu chuẩn xác (Grounding). Người học luôn chủ động tự vấn: *"Đã ĐƯỢC chưa?"* để rèn luyện **Tư duy phát triển (Growth Mindset của GS. Carol Dweck)**, kiên trì thử sai tích cực, phát hiện lỗi ảo giác và tự tay tối ưu giải pháp.
-3. **Động từ + ĐƯỢC (Kết tinh Năng lực Tự chủ & Sáng tạo Hân hoan):** Người học và tổ chức chuyển hóa quá trình thử nghiệm thành bản lĩnh tự chủ thực sự (*làm được, lắp ghép mô hình STEM/LEGO kết hợp chế tác được ứng dụng qua Vibe Coding trên Gemini Canvas, tự vận hành được 7 ban chuyên trách*) khi tự hào nói: *"Chính em đã làm ĐƯỢC!"*.
+### 2. Áp Dụng Khung Ngữ Pháp Sư Phạm "Hệ Hình Sư Phạm ĐƯỢC" (Embodied Competency Model)
+Mọi sản phẩm giáo dục, bài giảng, workshop tại Thư viện ANSAN hoặc ứng dụng AI do agent thiết kế kế thừa trực tiếp công trình nghiên cứu khoa học cốt lõi của tác giả (*A Gap in Learning Theories and Teaching Models: Proposing a New Indigenous and Competency-Based Teaching Model*, Pham Ba Hong Son, 2026, ORCID: 0009-0006-5607-1686). Hệ hình này giải quyết triệt để sự phân mảnh của triết học nhị nguyên Descartes (*Cartesian Dualism*) bằng **5 dòng chảy khoa học liên ngành**:
+1. **Ngôn ngữ học tri nhận bản địa:** Tiền động từ `ĐƯỢC + V` (vùng an toàn, thụ hưởng, đồng hóa Piaget) $\leftrightarrow$ Hậu động từ `V + ĐƯỢC` (nội hóa năng lực, điều ứng Piaget).
+2. **Nhận thức hiện thân (Embodied & Enactive Cognition - Francisco Varela):** Tri thức không phải là biểu tượng trừu tượng mà nảy sinh qua thao tác giác - vận động vật lý (chạm lắp LEGO, tạo tác Terrarium, gõ mã Vibe Coding).
+3. **Nguyên lý Năng lượng Tự do & Não bộ Bayes (Karl Friston):** Không đưa đáp án ăn sẵn. Tối thiểu hóa sai số dự đoán qua "Thử sai tích cực", duy trì động lực tái cấu trúc nơ-ron tự nhiên.
+4. **Trục Não - Ruột (Gut-Brain Axis & Thể "Được Lòng"):** Biến thiên hormone thần kinh tự nhiên: **Oxytocin** (Mở lòng, an tâm) $\rightarrow$ **Dopamine** (Cầu tiến, hành động) $\rightarrow$ **Serotonin** (90-95% từ vi hệ đường ruột, Vững lòng, "Được lòng chính mình").
+5. **Khó khăn mong muốn & Tư duy phát triển (Robert Bjork & Carol Dweck):** Thử sai tích cực cùng trạm siêu nhận thức "Đã ĐƯỢC chưa?".
+
+#### 5 Pha Vận Hành Sư Phạm:
+- **Pha 1: DỰ ĐOÁN (Prediction):** Kích hoạt ZPD và Não bộ Bayes, tạo khoảng trống sai số dự đoán để kích thích ham muốn tò mò nguyên bản.
+- **Pha 2: THIẾT KẾ (Design):** Thiết lập giàn giáo Socratic và các "khó khăn mong muốn" hợp lý, ngăn chặn việc ỷ lại đáp án ăn sẵn.
+- **Pha 3: THỪA HƯỞNG (Inheritance - `ĐƯỢC + V`):** Tạo môi trường khép kín Walled-Garden (Zero-PII), người học được chu cấp học liệu, giải phóng Oxytocin an tâm khám phá.
+- **Pha 4: THỰC THI (Execution - `V + ĐƯỢC`):** Chế tác hiện thân cùng LEGO SPIKE, thực hành Vibe Coding trên Gemini Canvas, kích hoạt Dopamine hân hoan.
+- **Pha 5: VÒNG LẶP SIÊU NHẬN THỨC "ĐƯỢC CHƯA?" (Central Metacognitive Loop):** Tự vấn, tinh chỉnh và chiêm nghiệm cho đến khi đạt trạng thái "Được lòng" (Serotonin bình an, tự chủ tuyệt đối).
 
 ### 3. Vận Hành Không Gian "Thư Viện Mở ANSAN" (Mô Hình Oodi Helsinki, Phần Lan)
 Khi thiết kế không gian trải nghiệm, chương trình hoạt động hoặc đề án tài trợ cho Thư viện mở ANSAN (Slogan: *"Bảo an AI - Sáng tạo Hân hoan"*), luôn kết hợp 3 tầng không gian và 4 động cơ dòng tiền Hybrid:
