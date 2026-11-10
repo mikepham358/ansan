@@ -280,7 +280,7 @@ Chúng tôi xây dựng quy trình kết nối đối tác 4 bước tinh gọn,
 
 * **Đơn vị chủ trì:** Ban Điều Hành Hệ Sinh Thái Bảo An AI & Thư Viện Mở ANSAN
 * **Đại diện Dự án:** ThS. Phạm Bá Hồng Sơn – Chủ nhiệm Dự án / Viện trưởng Sáng lập
-* **Email chính thức:** `contact@baoan.ai.vn` | `banthuky@ansan.edu.vn`
+* **Email chính thức:** `mikepham@baoan.ai.vn`
 * **Cổng thông tin dự án:** [https://baoan.ai.vn](https://baoan.ai.vn)
 * **Kho mã nguồn mở & Tài nguyên sư phạm:** [https://github.com/bao-an-ai](https://github.com/bao-an-ai)
 * **Địa điểm tiếp nhận dự án thí điểm:** Thư viện Mở ANSAN Campus (Hà Nội / Bình Dương / TP. Hồ Chí Minh)

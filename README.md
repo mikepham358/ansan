@@ -152,7 +152,7 @@ Thư viện ANSAN áp dụng mô hình kinh tế **Doanh nghiệp Xã hội Lai 
 
 * **Đơn vị chủ trì:** Ban Điều Hành Hệ Sinh Thái Bảo An AI & Thư Viện Mở ANSAN
 * **Chủ nhiệm:** ThS. Phạm Bá Hồng Sơn (Viện trưởng Sáng lập)
-* **Email:** `contact@baoan.ai.vn` | `banthuky@ansan.edu.vn`
+* **Email:** `mikepham@baoan.ai.vn`
 * **Website:** [https://ansan.pro](https://ansan.pro) | [https://baoan.ai.vn](https://baoan.ai.vn)
 * **GitHub Repository:** [https://github.com/mikepham358/ansan](https://github.com/mikepham358/ansan)
 

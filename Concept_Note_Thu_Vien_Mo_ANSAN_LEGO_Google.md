@@ -141,6 +141,6 @@ Chúng tôi trân trọng kính mời **LEGO Việt Nam** và **Google for Educa
 
 **ĐẠI DIỆN DỰ ÁN HỆ SINH THÁI BẢO AN AI & THƯ VIỆN MỞ ANSAN**  
 *Chủ nhiệm Dự án & Nhóm Nghiên cứu Quản trị Sư phạm AI*  
-- **Email Liên hệ:** contact@baoan.ai.vn | banthuky@ansan.edu.vn  
+- **Email Liên hệ:** mikepham@baoan.ai.vn  
 - **Cổng thông tin mở:** https://baoan.ai.vn  
 - **Địa điểm tiếp nhận dự án thí điểm:** Thư viện Mở ANSAN Campus (Hà Nội / Bình Dương / TP.HCM)

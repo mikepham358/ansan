@@ -238,7 +238,7 @@ ANSAN advances core U.S. diplomatic and regional developmental priorities:
 
 ### CONTACT INFORMATION
 * **Official Website:** [https://ansan.pro/en.html](https://ansan.pro/en.html)
-* **Lead Email:** `contact@baoan.ai.vn` | `banthuky@ansan.edu.vn`
+* **Lead Email:** `mikepham@baoan.ai.vn`
 * **Open Source Repository:** [https://github.com/mikepham358/ansan](https://github.com/mikepham358/ansan)
 * **Physical Location:** ANSAN Open Library Living Lab, Ho Chi Minh City & Binh Duong Innovation Corridor, Vietnam.
 
